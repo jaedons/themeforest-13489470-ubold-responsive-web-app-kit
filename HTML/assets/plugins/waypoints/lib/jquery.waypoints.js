@@ -348,7 +348,7 @@ https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
     /*eslint-disable eqeqeq */
     var isWindow = this.element == this.element.window
     /*eslint-enable eqeqeq */
-    var contextOffset = this.adapter.offset()
+    var contextOffset = isWindow ? { top: 0, left: 0 } : this.adapter.offset()
     var triggeredGroups = {}
     var axes
 

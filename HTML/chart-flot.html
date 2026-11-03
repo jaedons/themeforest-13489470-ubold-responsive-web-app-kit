@@ -11,6 +11,7 @@
         <title>Ubold - Responsive Admin Dashboard Template</title>
 
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/legacy-layout.css" rel="stylesheet">
         <link href="assets/css/core.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/components.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
@@ -63,7 +64,7 @@
 
                             <ul class="nav navbar-nav navbar-right pull-right">
                                 <li class="dropdown hidden-xs">
-                                    <a href="#" data-target="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="true">
+                                    <a href="#" data-bs-target="#" class="dropdown-toggle waves-effect waves-light" data-bs-toggle="dropdown" aria-expanded="true">
                                         <i class="icon-bell"></i> <span class="badge badge-xs badge-danger">3</span>
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-lg">
@@ -173,7 +174,7 @@
                                     <a href="#" class="right-bar-toggle waves-effect waves-light"><i class="icon-settings"></i></a>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true"><img src="assets/images/users/avatar-1.jpg" alt="user-img" class="img-circle"> </a>
+                                    <a href="" class="dropdown-toggle profile" data-bs-toggle="dropdown" aria-expanded="true"><img src="assets/images/users/avatar-1.jpg" alt="user-img" class="img-circle"> </a>
                                     <ul class="dropdown-menu">
                                         <li><a href="javascript:void(0)"><i class="ti-user m-r-5"></i> Profile</a></li>
                                         <li><a href="javascript:void(0)"><i class="ti-settings m-r-5"></i> Settings</a></li>
@@ -446,13 +447,13 @@
 		                                <div class="portlet-widgets">
 		                                    <a href="javascript:;" data-toggle="reload"><i class="ion-refresh"></i></a>
 		                                    <span class="divider"></span>
-		                                    <a data-toggle="collapse" data-parent="#accordion1" href="#portlet1"><i class="ion-minus-round"></i></a>
+		                                    <a data-bs-toggle="collapse" data-bs-parent="#accordion1" href="#portlet1"><i class="ion-minus-round"></i></a>
 		                                    <span class="divider"></span>
 		                                    <a href="#" data-toggle="remove"><i class="ion-close-round"></i></a>
 		                                </div>
 		                                <div class="clearfix"></div>
 		                            </div>
-		                            <div id="portlet1" class="panel-collapse collapse in">
+		                            <div id="portlet1" class="panel-collapse collapse show">
 		                                <div class="portlet-body">
 		                                    <div id="website-stats" style="height: 320px;" class="flot-chart"></div>
 		                                </div>
@@ -469,13 +470,13 @@
 		                                <div class="portlet-widgets">
 		                                    <a href="javascript:;" data-toggle="reload"><i class="ion-refresh"></i></a>
 		                                    <span class="divider"></span>
-		                                    <a data-toggle="collapse" data-parent="#accordion1" href="#portlet2"><i class="ion-minus-round"></i></a>
+		                                    <a data-bs-toggle="collapse" data-bs-parent="#accordion1" href="#portlet2"><i class="ion-minus-round"></i></a>
 		                                    <span class="divider"></span>
 		                                    <a href="#" data-toggle="remove"><i class="ion-close-round"></i></a>
 		                                </div>
 		                                <div class="clearfix"></div>
 		                            </div>
-		                            <div id="portlet2" class="panel-collapse collapse in">
+		                            <div id="portlet2" class="panel-collapse collapse show">
 		                                <div class="portlet-body">
 		                                    <div id="flotRealTime" style="height: 320px;" class="flot-chart"></div>
 		                                </div>
@@ -494,13 +495,13 @@
 		                                <div class="portlet-widgets">
 		                                    <a href="javascript:;" data-toggle="reload"><i class="ion-refresh"></i></a>
 		                                    <span class="divider"></span>
-		                                    <a data-toggle="collapse" data-parent="#accordion1" href="#portlet3"><i class="ion-minus-round"></i></a>
+		                                    <a data-bs-toggle="collapse" data-bs-parent="#accordion1" href="#portlet3"><i class="ion-minus-round"></i></a>
 		                                    <span class="divider"></span>
 		                                    <a href="#" data-toggle="remove"><i class="ion-close-round"></i></a>
 		                                </div>
 		                                <div class="clearfix"></div>
 		                            </div>
-		                            <div id="portlet3" class="panel-collapse collapse in">
+		                            <div id="portlet3" class="panel-collapse collapse show">
 		                                <div class="portlet-body">
 		                                    <div id="donut-chart">
 	                                            <div id="donut-chart-container" class="flot-chart" style="height: 320px;">
@@ -520,13 +521,13 @@
 		                                <div class="portlet-widgets">
 		                                    <a href="javascript:;" data-toggle="reload"><i class="ion-refresh"></i></a>
 		                                    <span class="divider"></span>
-		                                    <a data-toggle="collapse" data-parent="#accordion1" href="#portlet4"><i class="ion-minus-round"></i></a>
+		                                    <a data-bs-toggle="collapse" data-bs-parent="#accordion1" href="#portlet4"><i class="ion-minus-round"></i></a>
 		                                    <span class="divider"></span>
 		                                    <a href="#" data-toggle="remove"><i class="ion-close-round"></i></a>
 		                                </div>
 		                                <div class="clearfix"></div>
 		                            </div>
-		                            <div id="portlet4" class="panel-collapse collapse in">
+		                            <div id="portlet4" class="panel-collapse collapse show">
 		                                <div class="portlet-body">
 		                                    <div id="pie-chart">
 	                                            <div id="pie-chart-container" class="flot-chart" style="height: 320px;">
@@ -552,13 +553,13 @@
 		                                <div class="portlet-widgets">
 		                                    <a href="javascript:;" data-toggle="reload"><i class="ion-refresh"></i></a>
 		                                    <span class="divider"></span>
-		                                    <a data-toggle="collapse" data-parent="#accordion1" href="#portlet7"><i class="ion-minus-round"></i></a>
+		                                    <a data-bs-toggle="collapse" data-bs-parent="#accordion1" href="#portlet7"><i class="ion-minus-round"></i></a>
 		                                    <span class="divider"></span>
 		                                    <a href="#" data-toggle="remove"><i class="ion-close-round"></i></a>
 		                                </div>
 		                                <div class="clearfix"></div>
 		                            </div>
-		                            <div id="portlet7" class="panel-collapse collapse in">
+		                            <div id="portlet7" class="panel-collapse collapse show">
 		                                <div class="portlet-body">
 		                                    <div id="ordered-bars-chart" style="height: 320px;">
 	                                            
@@ -582,13 +583,13 @@
 		                                <div class="portlet-widgets">
 		                                    <a href="javascript:;" data-toggle="reload"><i class="ion-refresh"></i></a>
 		                                    <span class="divider"></span>
-		                                    <a data-toggle="collapse" data-parent="#accordion1" href="#portlet5"><i class="ion-minus-round"></i></a>
+		                                    <a data-bs-toggle="collapse" data-bs-parent="#accordion1" href="#portlet5"><i class="ion-minus-round"></i></a>
 		                                    <span class="divider"></span>
 		                                    <a href="#" data-toggle="remove"><i class="ion-close-round"></i></a>
 		                                </div>
 		                                <div class="clearfix"></div>
 		                            </div>
-		                            <div id="portlet5" class="panel-collapse collapse in">
+		                            <div id="portlet5" class="panel-collapse collapse show">
 		                                <div class="portlet-body">
 		                                    <div id="combine-chart">
 	                                            <div id="combine-chart-container" class="flot-chart" style="height: 320px;">
@@ -736,7 +737,9 @@
         <!-- jQuery  -->
         <!-- jQuery  -->
         <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery-migrate.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/legacy-compat.js"></script>
         <script src="assets/js/detect.js"></script>
         <script src="assets/js/fastclick.js"></script>
         <script src="assets/js/jquery.slimscroll.js"></script>

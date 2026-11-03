@@ -163,7 +163,7 @@ File: Pages
   width: 100%;
 }
 .select2-container-multi .select2-choices {
-  border: 1px solid #E3E3E3  !important;
+  border: 1px solid #E3E3E3 !important;
   box-shadow: none !important;
   background-image: none  !important;
   -webkit-border-radius: 4px !important;
@@ -611,7 +611,7 @@ File: Pages
 .percent:after {
   content: '%';
   margin-left: 0.1em;
-  font-size: .8em;
+  font-size: 0.8em;
 }
 #flotTip {
   padding: 8px 12px;
@@ -640,9 +640,9 @@ File: Pages
   border-left: none;
 }
 .c3-tooltip {
-  -webkit-box-shadow: 0px 0px 8px 0px #777777;
-  box-shadow: 0px 0px 8px 0px #777777;
-  -moz-box-shadow: 0px 0px 8px 0px #777777;
+  -webkit-box-shadow: 0px 0px 8px 0px #777;
+  box-shadow: 0px 0px 8px 0px #777;
+  -moz-box-shadow: 0px 0px 8px 0px #777;
   opacity: 1;
 }
 .c3-chart-arcs-title {
@@ -931,7 +931,7 @@ File: Pages
   display: inline-block;
   float: right;
   font-size: 14px;
-  padding: .8em 1em;
+  padding: 0.8em 1em;
 }
 .cd-timeline-content .cd-date {
   display: inline-block;
@@ -946,8 +946,8 @@ File: Pages
 }
 .cd-timeline-content .cd-date {
   float: left;
-  padding: .8em 0;
-  opacity: .7;
+  padding: 0.8em 0;
+  opacity: 0.7;
 }
 .cd-timeline-content::before {
   content: '';

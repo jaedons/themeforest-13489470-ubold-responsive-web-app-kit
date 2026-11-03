@@ -14,6 +14,7 @@
 		<link href="assets/plugins/owl.carousel/dist/assets/owl.theme.default.min.css" rel="stylesheet" type="text/css" />
 
 		<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/legacy-layout.css" rel="stylesheet">
         <link href="assets/css/core.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/components.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
@@ -65,7 +66,7 @@
 
                             <ul class="nav navbar-nav navbar-right pull-right">
                                 <li class="dropdown hidden-xs">
-                                    <a href="#" data-target="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="true">
+                                    <a href="#" data-bs-target="#" class="dropdown-toggle waves-effect waves-light" data-bs-toggle="dropdown" aria-expanded="true">
                                         <i class="icon-bell"></i> <span class="badge badge-xs badge-danger">3</span>
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-lg">
@@ -175,7 +176,7 @@
                                     <a href="#" class="right-bar-toggle waves-effect waves-light"><i class="icon-settings"></i></a>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true"><img src="assets/images/users/avatar-1.jpg" alt="user-img" class="img-circle"> </a>
+                                    <a href="" class="dropdown-toggle profile" data-bs-toggle="dropdown" aria-expanded="true"><img src="assets/images/users/avatar-1.jpg" alt="user-img" class="img-circle"> </a>
                                     <ul class="dropdown-menu">
                                         <li><a href="javascript:void(0)"><i class="ti-user m-r-5"></i> Profile</a></li>
                                         <li><a href="javascript:void(0)"><i class="ti-settings m-r-5"></i> Settings</a></li>
@@ -455,11 +456,11 @@
 											<p class="text-muted m-b-30 font-13">Add captions to your slides easily with the <code>.carousel-caption</code> element within any <code>.item</code>. </p>
 											
 											<!-- START carousel-->
-											<div id="carousel-example-captions" data-ride="carousel" class="carousel slide">
+											<div id="carousel-example-captions" data-bs-ride="carousel" class="carousel slide">
 												<ol class="carousel-indicators">
-													<li data-target="#carousel-example-captions" data-slide-to="0" class="active"></li>
-													<li data-target="#carousel-example-captions" data-slide-to="1"></li>
-													<li data-target="#carousel-example-captions" data-slide-to="2"></li>
+													<li data-bs-target="#carousel-example-captions" data-bs-slide-to="0" class="active"></li>
+													<li data-bs-target="#carousel-example-captions" data-bs-slide-to="1"></li>
+													<li data-bs-target="#carousel-example-captions" data-bs-slide-to="2"></li>
 												</ol>
 												<div role="listbox" class="carousel-inner">
 													<div class="item active">
@@ -490,8 +491,8 @@
 														</div>
 													</div>
 												</div>
-												<a href="#carousel-example-captions" role="button" data-slide="prev" class="left carousel-control"> <span aria-hidden="true" class="fa fa-angle-left"></span> <span class="sr-only">Previous</span> </a>
-												<a href="#carousel-example-captions" role="button" data-slide="next" class="right carousel-control"> <span aria-hidden="true" class="fa fa-angle-right"></span> <span class="sr-only">Next</span> </a>
+												<a href="#carousel-example-captions" role="button" data-bs-slide="prev" class="left carousel-control"> <span aria-hidden="true" class="fa fa-angle-left"></span> <span class="sr-only">Previous</span> </a>
+												<a href="#carousel-example-captions" role="button" data-bs-slide="next" class="right carousel-control"> <span aria-hidden="true" class="fa fa-angle-right"></span> <span class="sr-only">Next</span> </a>
 											</div>
 											<!-- END carousel-->
 										</div>
@@ -501,11 +502,11 @@
 											<p class="text-muted m-b-30 font-13">A slideshow component for cycling through elements, like a carousel.</p>
 											
 											<!-- START carousel-->
-											<div id="carousel-example-captions-1" data-ride="carousel" class="carousel slide">
+											<div id="carousel-example-captions-1" data-bs-ride="carousel" class="carousel slide">
 												<ol class="carousel-indicators">
-													<li data-target="#carousel-example-captions-1" data-slide-to="0" class="active"></li>
-													<li data-target="#carousel-example-captions-1" data-slide-to="1"></li>
-													<li data-target="#carousel-example-captions-1" data-slide-to="2"></li>
+													<li data-bs-target="#carousel-example-captions-1" data-bs-slide-to="0" class="active"></li>
+													<li data-bs-target="#carousel-example-captions-1" data-bs-slide-to="1"></li>
+													<li data-bs-target="#carousel-example-captions-1" data-bs-slide-to="2"></li>
 												</ol>
 												<div role="listbox" class="carousel-inner">
 													<div class="item active">
@@ -792,7 +793,9 @@
 
         <!-- jQuery  -->
         <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery-migrate.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/legacy-compat.js"></script>
         <script src="assets/js/detect.js"></script>
         <script src="assets/js/fastclick.js"></script>
         <script src="assets/js/jquery.slimscroll.js"></script>

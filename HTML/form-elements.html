@@ -11,6 +11,7 @@
 		<title>Ubold - Responsive Admin Dashboard Template</title>
 
 		<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/legacy-layout.css" rel="stylesheet">
         <link href="assets/css/core.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/components.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
@@ -62,7 +63,7 @@
 
                             <ul class="nav navbar-nav navbar-right pull-right">
                                 <li class="dropdown hidden-xs">
-                                    <a href="#" data-target="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="true">
+                                    <a href="#" data-bs-target="#" class="dropdown-toggle waves-effect waves-light" data-bs-toggle="dropdown" aria-expanded="true">
                                         <i class="icon-bell"></i> <span class="badge badge-xs badge-danger">3</span>
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-lg">
@@ -172,7 +173,7 @@
                                     <a href="#" class="right-bar-toggle waves-effect waves-light"><i class="icon-settings"></i></a>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true"><img src="assets/images/users/avatar-1.jpg" alt="user-img" class="img-circle"> </a>
+                                    <a href="" class="dropdown-toggle profile" data-bs-toggle="dropdown" aria-expanded="true"><img src="assets/images/users/avatar-1.jpg" alt="user-img" class="img-circle"> </a>
                                     <ul class="dropdown-menu">
                                         <li><a href="javascript:void(0)"><i class="ti-user m-r-5"></i> Profile</a></li>
                                         <li><a href="javascript:void(0)"><i class="ti-settings m-r-5"></i> Settings</a></li>
@@ -747,7 +748,7 @@
 	                                                <label class="control-label" for="example-input1-group3">Dropdowns</label>
 	                                                    <div class="input-group">
 	                                                        <div class="input-group-btn">
-	                                                            <button type="button" class="btn waves-effect waves-light btn-primary dropdown-toggle" data-toggle="dropdown" style="overflow: hidden; position: relative;">Action <span class="caret"></span></button>
+	                                                            <button type="button" class="btn waves-effect waves-light btn-primary dropdown-toggle" data-bs-toggle="dropdown" style="overflow: hidden; position: relative;">Action <span class="caret"></span></button>
 	                                                            <ul class="dropdown-menu">
 	                                                                <li><a href="javascript:void(0)">Action</a></li>
 	                                                                <li><a href="javascript:void(0)">Another action</a></li>
@@ -760,7 +761,7 @@
 	                                                    <div class="input-group m-t-10">
 	                                                        <input type="email" id="example-input2-group3" name="example-input2-group3" class="form-control" placeholder="Email">
 	                                                        <div class="input-group-btn">
-	                                                            <button type="button" class="btn waves-effect waves-light btn-primary dropdown-toggle" data-toggle="dropdown" style="overflow: hidden; position: relative;">Action <span class="caret"></span></button>
+	                                                            <button type="button" class="btn waves-effect waves-light btn-primary dropdown-toggle" data-bs-toggle="dropdown" style="overflow: hidden; position: relative;">Action <span class="caret"></span></button>
 	                                                            <ul class="dropdown-menu dropdown-menu-right">
 	                                                                <li><a href="javascript:void(0)">Action</a></li>
 	                                                                <li><a href="javascript:void(0)">Another action</a></li>
@@ -774,7 +775,7 @@
 	                                                    <div class="input-group m-t-10">
 	                                                        <div class="input-group-btn">
 	                                                            <button type="button" class="btn waves-effect waves-light btn-primary" style="overflow: hidden; position: relative;">Action</button>
-	                                                            <button type="button" class="btn waves-effect waves-light btn-primary dropdown-toggle" data-toggle="dropdown" style="overflow: hidden; position: relative;"><span class="caret"></span></button>
+	                                                            <button type="button" class="btn waves-effect waves-light btn-primary dropdown-toggle" data-bs-toggle="dropdown" style="overflow: hidden; position: relative;"><span class="caret"></span></button>
 	                                                            <ul class="dropdown-menu">
 	                                                                <li><a href="javascript:void(0)">Action</a></li>
 	                                                                <li><a href="javascript:void(0)">Another action</a></li>
@@ -784,7 +785,7 @@
 	                                                        </div>
 	                                                        <input type="text" id="example-input3-group3" name="example-input3-group3" class="form-control" placeholder="..">
 	                                                        <div class="input-group-btn">
-	                                                            <button type="button" class="btn waves-effect waves-light btn-primary dropdown-toggle" data-toggle="dropdown" style="overflow: hidden; position: relative;"><span class="caret"></span></button>
+	                                                            <button type="button" class="btn waves-effect waves-light btn-primary dropdown-toggle" data-bs-toggle="dropdown" style="overflow: hidden; position: relative;"><span class="caret"></span></button>
 	                                                            <ul class="dropdown-menu dropdown-menu-right">
 	                                                                <li><a href="javascript:void(0)">Action</a></li>
 	                                                                <li><a href="javascript:void(0)">Another action</a></li>
@@ -1089,7 +1090,9 @@
 
         <!-- jQuery  -->
         <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery-migrate.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/legacy-compat.js"></script>
         <script src="assets/js/detect.js"></script>
         <script src="assets/js/fastclick.js"></script>
         <script src="assets/js/jquery.slimscroll.js"></script>

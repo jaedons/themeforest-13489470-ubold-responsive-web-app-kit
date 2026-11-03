@@ -12,43 +12,24 @@ File: Chartjs
     var ChartJs = function() {};
 
     ChartJs.prototype.respChart = function respChart(selector,type,data, options) {
-        // get selector by context
-        var ctx = selector.get(0).getContext("2d");
-        // pointing parent container to make chart js inherit its width
-        var container = $(selector).parent();
-
-        // enable resizing matter
-        $(window).resize( generateChart );
-
-        // this function produce the responsive Chart JS
-        function generateChart(){
-            // make chart width fit with its container
-            var ww = selector.attr('width', $(container).width() );
-            switch(type){
-                case 'Line':
-                    new Chart(ctx).Line(data, options);
-                    break;
-                case 'Doughnut':
-                    new Chart(ctx).Doughnut(data, options);
-                    break;
-                case 'Pie':
-                    new Chart(ctx).Pie(data, options);
-                    break;
-                case 'Bar':
-                    new Chart(ctx).Bar(data, options);
-                    break;
-                case 'Radar':
-                    new Chart(ctx).Radar(data, options);
-                    break;
-                case 'PolarArea':
-                    new Chart(ctx).PolarArea(data, options);
-                    break;
-            }
-            // Initiate new chart or Redraw
-
+        const canvas = selector.get(0);
+        const chartType = {Line: 'line', Doughnut: 'doughnut', Pie: 'pie', Bar: 'bar', Radar: 'radar', PolarArea: 'polarArea'}[type];
+        const modernData = Array.isArray(data) ? {
+            labels: data.map(item => item.label),
+            datasets: [{data: data.map(item => item.value), backgroundColor: data.map(item => item.color)}]
+        } : {
+            labels: data.labels,
+            datasets: data.datasets.map((item, index) => ({
+                label: 'Series ' + (index + 1), data: item.data,
+                backgroundColor: item.fillColor, borderColor: item.strokeColor,
+                pointBackgroundColor: item.pointColor, pointBorderColor: item.pointStrokeColor,
+                hoverBackgroundColor: item.highlightFill, fill: type === 'Line' || type === 'Radar'
+            }))
         };
-        // run function - render chart at first load
-        generateChart();
+        const existing = Chart.getChart(canvas);
+        if (existing) existing.destroy();
+        return new Chart(canvas, {type: chartType, data: modernData,
+            options: Object.assign({responsive: true}, options || {})});
     },
     //init
     ChartJs.prototype.init = function() {

@@ -177,12 +177,12 @@ function($) {
 
     //initializing tooltip
     Components.prototype.initTooltipPlugin = function() {
-        $.fn.tooltip && $('[data-toggle="tooltip"]').tooltip()
+        $.fn.tooltip && $('[data-bs-toggle="tooltip"]').tooltip()
     },
 
     //initializing popover
     Components.prototype.initPopoverPlugin = function() {
-        $.fn.popover && $('[data-toggle="popover"]').popover()
+        $.fn.popover && $('[data-bs-toggle="popover"]').popover()
     },
 
     //initializing custom modal

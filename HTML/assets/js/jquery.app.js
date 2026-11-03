@@ -30,7 +30,7 @@
       }
       
       toggle_slimscroll(".slimscrollleft");
-      $("body").trigger("resize");
+      window.dispatchEvent(new Event('resize'));
     },
     //menu item click
     Sidemenu.prototype.menuItemClick = function(e) {
@@ -159,8 +159,8 @@ function($) {
       });
     
       //RUN RESIZE ITEMS
-      $(window).resize(debounce(resizeitems,100));
-      $("body").trigger("resize");
+      $(window).on("resize", debounce(resizeitems,100));
+      resizeitems();
 
       // right side-bar toggle
       $('.right-bar-toggle').on('click', function(e){

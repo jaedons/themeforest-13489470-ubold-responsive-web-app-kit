@@ -161,3 +161,15 @@ File: Responsive
     }
   }
 }
+
+// Bootstrap 5 migration: mobile navigation overlays the full-width content.
+@media (max-width: 767px) {
+  #wrapper .content-page, #wrapper.enlarged .content-page { margin-left: 0; }
+  #wrapper .footer, #wrapper.enlarged .footer { left: 0; }
+  #wrapper .left.side-menu { position: fixed; top: 60px; bottom: 0; }
+  #wrapper.enlarged .left.side-menu { display: none; }
+  #wrapper .topbar .topbar-left { width: 70px; }
+  #wrapper .topbar .navbar-default { margin-left: 70px; }
+  #wrapper .topbar .logo span { display: none; }
+  #wrapper .topbar .logo .icon-c-logo { display: block; line-height: 60px; }
+}

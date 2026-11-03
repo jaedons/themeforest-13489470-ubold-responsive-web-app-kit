@@ -17,6 +17,7 @@
 		<link href="assets/plugins/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/legacy-layout.css" rel="stylesheet">
         <link href="assets/css/core.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/components.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
@@ -69,7 +70,7 @@
 
                             <ul class="nav navbar-nav navbar-right pull-right">
                                 <li class="dropdown hidden-xs">
-                                    <a href="#" data-target="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="true">
+                                    <a href="#" data-bs-target="#" class="dropdown-toggle waves-effect waves-light" data-bs-toggle="dropdown" aria-expanded="true">
                                         <i class="icon-bell"></i> <span class="badge badge-xs badge-danger">3</span>
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-lg">
@@ -179,7 +180,7 @@
                                     <a href="#" class="right-bar-toggle waves-effect waves-light"><i class="icon-settings"></i></a>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true"><img src="assets/images/users/avatar-1.jpg" alt="user-img" class="img-circle"> </a>
+                                    <a href="" class="dropdown-toggle profile" data-bs-toggle="dropdown" aria-expanded="true"><img src="assets/images/users/avatar-1.jpg" alt="user-img" class="img-circle"> </a>
                                     <ul class="dropdown-menu">
                                         <li><a href="javascript:void(0)"><i class="ti-user m-r-5"></i> Profile</a></li>
                                         <li><a href="javascript:void(0)"><i class="ti-settings m-r-5"></i> Settings</a></li>
@@ -680,7 +681,7 @@
 												</div>
 
 												<label>Auto close</label>
-												<div class="input-group clockpicker " data-placement="top" data-align="top" data-autoclose="true">
+												<div class="input-group clockpicker " data-bs-placement="top" data-align="top" data-autoclose="true">
 													<input type="text" class="form-control" value="13:14">
 													<span class="input-group-addon"> <span class="glyphicon glyphicon-time"></span> </span>
 												</div>
@@ -702,7 +703,7 @@
                                                 </div>
                                                 
                                                 <label>Place at left, align the arrow to top </label>
-												<div class="input-group clockpicker" data-placement="top" data-align="top">
+												<div class="input-group clockpicker" data-bs-placement="top" data-align="top">
 													<input type="text" class="form-control" value="13:14">
 													<span class="input-group-addon"> <span class="glyphicon glyphicon-time"></span> </span>
 												</div>
@@ -860,7 +861,9 @@
 
         <!-- jQuery  -->
         <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery-migrate.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/legacy-compat.js"></script>
         <script src="assets/js/detect.js"></script>
         <script src="assets/js/fastclick.js"></script>
         <script src="assets/js/jquery.slimscroll.js"></script>
