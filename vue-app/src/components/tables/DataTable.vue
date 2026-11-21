@@ -49,15 +49,15 @@ const filtered = computed(() => {
 const visible = computed(() =>
   filtered.value.slice((page.value - 1) * size.value, page.value * size.value),
 )
-watch([query, size], () => {
+watch([query, size, sort], () => {
   page.value = 1
 })
-watch([page, query, size], () => {
+watch([page, query, size, sort, visible], () => {
   selected.value = []
   table.value?.clearSelection()
 })
 watch(
-  () => props.rows.length,
+  () => filtered.value.length,
   () => {
     page.value = Math.min(page.value, Math.max(1, Math.ceil(filtered.value.length / size.value)))
   },

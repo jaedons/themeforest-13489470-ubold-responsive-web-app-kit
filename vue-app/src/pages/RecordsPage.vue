@@ -15,6 +15,18 @@ import { usePage } from '../composables/usePage'
 import type { DataRow, TableColumn } from '../types'
 const page = usePage(),
   source = page.value.tables.find((table) => table.headers.length && table.rows.length)
+const additionalTables = page.value.tables
+  .filter((table) => table !== source && table.headers.length && table.rows.length)
+  .map((table, index) => ({
+    title: page.value.headings[index + 1] || `Table example ${index + 2}`,
+    columns: table.headers
+      .map((label, i) => ({ key: 'c' + i, label }))
+      .filter((col) => col.label && !/^(action|actions)$/i.test(col.label)),
+    rows: table.rows.map((row, i) => ({
+      id: String(i),
+      ...Object.fromEntries(row.map((cell, j) => ['c' + j, cell || '—'])),
+    })),
+  }))
 const indexes =
   source?.headers
     .map((label, index) => ({ label, index }))
@@ -93,6 +105,8 @@ async function remove(row: DataRow) {
       @create="open()"
       @edit="open"
       @remove="remove" /></SectionCard
+  ><SectionCard v-for="(table, index) in additionalTables" :key="index" :title="table.title"
+    ><DataTable :rows="table.rows" :columns="table.columns" /></SectionCard
   ><ElDialog
     v-model="dialog"
     :title="editing ? 'Edit record' : 'Add record'"
@@ -104,7 +118,11 @@ async function remove(row: DataRow) {
         :key="col.key"
         :prop="col.key"
         :label="col.label"
-        :rules="i === 0 ? [{ required: true, message: 'Enter ' + col.label, trigger: 'blur' }] : []"
+        :rules="
+          i === 0
+            ? [{ required: true, whitespace: true, message: 'Enter ' + col.label, trigger: 'blur' }]
+            : []
+        "
         ><ElInput v-model="draft[col.key]" :aria-label="col.label" /></ElFormItem></ElForm
     ><template #footer
       ><ElButton @click="dialog = false">Cancel</ElButton

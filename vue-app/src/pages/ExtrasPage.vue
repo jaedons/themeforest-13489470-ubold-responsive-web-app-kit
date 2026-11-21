@@ -23,6 +23,7 @@ import {
   ElResult,
   ElCountdown,
   ElTree,
+  ElProgress,
 } from 'element-plus'
 import SectionCard from '../components/display/SectionCard.vue'
 import InvoiceView from '../components/display/InvoiceView.vue'
@@ -156,7 +157,36 @@ function previewPlan(name: string) {
       ><ElDescriptionsItem label="Email">{{ profile.email }}</ElDescriptionsItem
       ><ElDescriptionsItem label="Location">San Francisco</ElDescriptionsItem
       ><ElDescriptionsItem label="Projects">Ubold Workspace</ElDescriptionsItem></ElDescriptions
-    ><ElDialog v-model="dialog" title="Edit profile" width="520px"
+    >
+    <div class="two-column profile-details">
+      <SectionCard title="Biography"
+        ><p>{{ profile.bio }}</p>
+        <h3>Skills</h3>
+        <div
+          v-for="skill in [
+            { name: 'Angular', value: 60 },
+            { name: 'Javascript', value: 90 },
+            { name: 'Wordpress', value: 80 },
+            { name: 'HTML/CSS', value: 95 },
+          ]"
+          :key="skill.name"
+          class="product-progress"
+        >
+          <span>{{ skill.name }}</span><ElProgress :percentage="skill.value" /></div></SectionCard
+      ><SectionCard title="Activity"
+        ><ElTimeline
+          ><ElTimelineItem timestamp="Today">John Doe updated the Ubold project.</ElTimelineItem
+          ><ElTimelineItem timestamp="Yesterday">Shared the latest design review.</ElTimelineItem
+          ><ElTimelineItem timestamp="This week"
+            >Completed the dashboard milestone.</ElTimelineItem
+          ></ElTimeline
+        >
+        <h3>My Office</h3>
+        <p>San Francisco · United States</p>
+        <RouterLink to="/maps/google">View office map</RouterLink></SectionCard
+      >
+    </div>
+    <ElDialog v-model="dialog" title="Edit profile" width="520px"
       ><ElForm ref="formRef" :model="profileDraft" label-position="top"
         ><ElFormItem label="Name" prop="name" :rules="[{ required: true, message: 'Enter a name' }]"
           ><ElInput v-model="profileDraft.name" aria-label="Name" /></ElFormItem

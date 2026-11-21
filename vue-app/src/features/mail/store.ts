@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import { reactive, ref } from 'vue'
+import type { UploadUserFile } from 'element-plus'
 export const useMailStore = defineStore('mail', () => {
   const messages = ref([
     {
@@ -48,5 +49,6 @@ export const useMailStore = defineStore('mail', () => {
     subject: '',
     body: '<p>Hello,</p><p>Write your message here.</p>',
   })
-  return { messages, draft }
+  const attachments = ref<UploadUserFile[]>([])
+  return { messages, draft, attachments }
 })

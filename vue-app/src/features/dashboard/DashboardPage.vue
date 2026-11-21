@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { ElSelect, ElOption, ElProgress, ElTable, ElTableColumn, ElTag } from 'element-plus'
+import DashboardVariants from './DashboardVariants.vue'
 import StatCard from '../../components/display/StatCard.vue'
 import SectionCard from '../../components/display/SectionCard.vue'
 import ChartView from '../../components/charts/ChartView.vue'
@@ -33,62 +34,65 @@ const orders = [
 ]
 </script>
 <template>
-  <div class="stat-grid">
-    <StatCard
-      v-for="(stat, i) in stats"
-      :key="stat[0]"
-      :label="stat[0]!"
-      :value="stat[1]!"
-      :trend="stat[2]!"
-      :icon="i"
-      :tone="['teal', 'pink', 'purple', 'blue'][i]"
-    />
-  </div>
-  <div class="dashboard-charts">
-    <SectionCard title="Total revenue" description="Sales performance for the current period"
-      ><div class="revenue-summary">
-        <strong>$75,420</strong><span class="muted">Total sales this month</span
-        ><ElProgress type="dashboard" :percentage="80" :width="170" color="#5fbeaa" />
-      </div>
-      <div class="metric-strip">
-        <span>Target <b>$100,000</b></span
-        ><span>Last week <b>$23,540</b></span
-        ><span>Last month <b>$65,210</b></span>
-      </div></SectionCard
-    ><SectionCard title="Sales analytics"
-      ><template #actions
-        ><ElSelect v-model="period" aria-label="Sales period" style="width: 130px"
-          ><ElOption label="This month" value="month" /><ElOption
-            label="This week"
-            value="week" /></ElSelect></template
-      ><ChartView
-        :label="page.title + ' sales'"
-        :values="sales"
-        :secondary="[28, 48, 40, 19, 56, 27, 60]"
-        :height="320"
-    /></SectionCard>
-  </div>
-  <div class="two-column">
-    <SectionCard title="Audience overview"
-      ><ChartView
-        :kind="page.id === 'dashboard_3' ? 'doughnut' : 'line'"
-        label="Audience activity"
-        :values="[28, 48, 40, 65, 56, 78, 90]"
-        :height="290" /></SectionCard
-    ><SectionCard title="Recent orders"
-      ><template #actions><RouterLink to="/ecommerce/orders">View all</RouterLink></template
-      ><ElTable :data="orders"
-        ><ElTableColumn prop="name" label="Item" min-width="140" /><ElTableColumn
-          prop="amount"
-          label="Amount"
-        /><ElTableColumn label="Status" min-width="120"
-          ><template #default="{ row }"
-            ><ElTag :type="row.status === 'Completed' ? 'success' : 'warning'">{{
-              row.status
-            }}</ElTag></template
-          ></ElTableColumn
-        ></ElTable
-      ></SectionCard
-    >
-  </div>
+  <DashboardVariants v-if="page.id !== 'index'" />
+  <template v-else>
+    <div class="stat-grid">
+      <StatCard
+        v-for="(stat, i) in stats"
+        :key="stat[0]"
+        :label="stat[0]!"
+        :value="stat[1]!"
+        :trend="stat[2]!"
+        :icon="i"
+        :tone="['teal', 'pink', 'purple', 'blue'][i]"
+      />
+    </div>
+    <div class="dashboard-charts">
+      <SectionCard title="Total revenue" description="Sales performance for the current period"
+        ><div class="revenue-summary">
+          <strong>$75,420</strong><span class="muted">Total sales this month</span
+          ><ElProgress type="dashboard" :percentage="80" :width="170" color="#5fbeaa" />
+        </div>
+        <div class="metric-strip">
+          <span>Target <b>$100,000</b></span
+          ><span>Last week <b>$23,540</b></span
+          ><span>Last month <b>$65,210</b></span>
+        </div></SectionCard
+      ><SectionCard title="Sales analytics"
+        ><template #actions
+          ><ElSelect v-model="period" aria-label="Sales period" style="width: 130px"
+            ><ElOption label="This month" value="month" /><ElOption
+              label="This week"
+              value="week" /></ElSelect></template
+        ><ChartView
+          :label="page.title + ' sales'"
+          :values="sales"
+          :secondary="[28, 48, 40, 19, 56, 27, 60]"
+          :height="320"
+      /></SectionCard>
+    </div>
+    <div class="two-column">
+      <SectionCard title="Audience overview"
+        ><ChartView
+          kind="line"
+          label="Audience activity"
+          :values="[28, 48, 40, 65, 56, 78, 90]"
+          :height="290" /></SectionCard
+      ><SectionCard title="Recent orders"
+        ><template #actions><RouterLink to="/ecommerce/orders">View all</RouterLink></template
+        ><ElTable :data="orders"
+          ><ElTableColumn prop="name" label="Item" min-width="140" /><ElTableColumn
+            prop="amount"
+            label="Amount"
+          /><ElTableColumn label="Status" min-width="120"
+            ><template #default="{ row }"
+              ><ElTag :type="row.status === 'Completed' ? 'success' : 'warning'">{{
+                row.status
+              }}</ElTag></template
+            ></ElTableColumn
+          ></ElTable
+        ></SectionCard
+      >
+    </div>
+  </template>
 </template>

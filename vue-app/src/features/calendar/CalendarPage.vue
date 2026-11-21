@@ -52,7 +52,29 @@ const form = reactive({
   color: 'event-teal',
 })
 const removeAfterDrop = ref(false),
-  externalLabels = ref(['Team meeting', 'Design review', 'Follow up'])
+  externalLabels = ref([
+    { id: '1', title: 'Team meeting', color: 'event-teal' },
+    { id: '2', title: 'Design review', color: 'event-purple' },
+    { id: '3', title: 'Follow up', color: 'event-blue' },
+  ])
+const categoryDialog = ref(false),
+  categoryName = ref(''),
+  categoryColor = ref('event-teal')
+function addCategory() {
+  if (!categoryName.value.trim()) return ElMessage.warning('Enter a category name')
+  externalLabels.value.push({
+    id: crypto.randomUUID(),
+    title: categoryName.value.trim(),
+    color: categoryColor.value,
+  })
+  categoryName.value = ''
+  categoryDialog.value = false
+}
+function useTemplate(template: { title: string; color: string }) {
+  open()
+  form.title = template.title
+  form.color = template.color
+}
 let draggable: Draggable | undefined
 function open(event?: EventApi, start?: string, end?: string) {
   editing.value = event?.id || ''
@@ -102,7 +124,7 @@ const options = computed<CalendarOptions>(() => ({
     track(info.event)
     if (removeAfterDrop.value)
       externalLabels.value = externalLabels.value.filter(
-        (label) => label !== info.draggedEl.textContent?.trim(),
+        (label) => label.id !== info.draggedEl.dataset.templateId,
       )
   },
 }))
@@ -152,7 +174,7 @@ onMounted(() => {
       itemSelector: '.external-event',
       eventData: (el) => ({
         title: el.textContent?.trim() || 'New event',
-        className: 'event-teal',
+        className: el.dataset.color || 'event-teal',
       }),
     })
 })
@@ -166,16 +188,48 @@ onBeforeUnmount(() => draggable?.destroy())
         Select a date range or drag an event onto the calendar. Changes are kept in this page only.
       </p>
       <div ref="external" class="external-events">
-        <div v-for="label in externalLabels" :key="label" class="external-event" tabindex="0">
-          {{ label }}
+        <div
+          v-for="label in externalLabels"
+          :key="label.id"
+          class="external-event"
+          :class="label.color"
+          :data-template-id="label.id"
+          :data-color="label.color"
+          tabindex="0"
+          role="button"
+          :aria-label="'Schedule ' + label.title"
+          @keydown.enter.prevent="useTemplate(label)"
+          @keydown.space.prevent="useTemplate(label)"
+          @dblclick="useTemplate(label)"
+        >
+          {{ label.title }}
         </div>
       </div>
+      <ElButton @click="categoryDialog = true">Create category</ElButton>
       <ElCheckbox v-model="removeAfterDrop">Remove after drop</ElCheckbox>
       <p role="status">
         <ElTag>{{ events.length }} scheduled events</ElTag>
       </p></SectionCard
     ><SectionCard><FullCalendar :options="options" /></SectionCard>
   </div>
+  <ElDialog v-model="categoryDialog" title="Create category" width="440px"
+    ><form @submit.prevent="addCategory">
+      <ElFormItem label="Category name"
+        ><ElInput v-model="categoryName" aria-label="Category name" /></ElFormItem
+      ><ElFormItem label="Color"
+        ><ElSelect v-model="categoryColor" aria-label="Category color"
+          ><ElOption
+            v-for="color in ['teal', 'purple', 'blue']"
+            :key="color"
+            :value="'event-' + color"
+            :label="color" /></ElSelect
+      ></ElFormItem>
+      <div class="action-bar">
+        <ElButton @click="categoryDialog = false">Cancel</ElButton
+        ><ElButton type="primary" native-type="submit">Create category</ElButton>
+      </div>
+    </form></ElDialog
+  >
   <ElDialog
     v-model="dialog"
     :title="editing ? 'Edit event' : 'Add event'"

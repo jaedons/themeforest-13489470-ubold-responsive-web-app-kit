@@ -19,3 +19,11 @@ Mobile navigation is a drawer. Content must not shrink to fit a visible sidebar.
 Tables keep internal horizontal scrolling, dialogs fit the viewport, long names
 truncate or wrap, keyboard focus is visible, and reduced motion is respected.
 The product's colors and density are established; migration is not a marketing redesign.
+
+## Parity maintenance
+
+Dashboard variants retain their distinct business modules. Original multi-table examples
+must render every populated source table. Layout variants alter the shared shell rather
+than displaying a mock profile inside page content. Cancel actions edit a separate draft;
+mail folders follow URL history. Keep primary tokens and top-bar contrast stable after
+lazy-loaded Element Plus styles. See PARITY-AUDIT.md for the comparison evidence.

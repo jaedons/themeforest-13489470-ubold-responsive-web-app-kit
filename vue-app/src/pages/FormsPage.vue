@@ -61,6 +61,23 @@ const initialValues = () => ({
   message: '',
 })
 const data = reactive(initialValues())
+const editableProfile = reactive({
+  name: 'John Doe',
+  email: 'john@example.com',
+  country: 'United States',
+})
+const profileDraft = reactive({ ...editableProfile })
+function openProfile() {
+  Object.assign(profileDraft, editableProfile)
+  edit.value = true
+}
+async function saveProfile() {
+  if (await formRef.value?.validate().catch(() => false)) {
+    Object.assign(editableProfile, profileDraft)
+    edit.value = false
+    ElMessage.success('Profile updated in this page')
+  }
+}
 const editor = ref(
   '<h2>Welcome to Ubold</h2><p>Edit this document using the Vue editor toolbar.</p>',
 )
@@ -148,24 +165,26 @@ function mask(key: 'phone' | 'postal' | 'card', value: string) {
   >
   <SectionCard v-else-if="id === 'form-xeditable'" title="Editable profile"
     ><ElDescriptions :column="1" border
-      ><ElDescriptionsItem label="Name">{{ data.name || 'John Doe' }}</ElDescriptionsItem
-      ><ElDescriptionsItem label="Email">{{ data.email || 'john@example.com' }}</ElDescriptionsItem
+      ><ElDescriptionsItem label="Name">{{ editableProfile.name }}</ElDescriptionsItem
+      ><ElDescriptionsItem label="Email">{{ editableProfile.email }}</ElDescriptionsItem
       ><ElDescriptionsItem label="Country">{{
-        data.country || 'United States'
+        editableProfile.country
       }}</ElDescriptionsItem></ElDescriptions
-    ><ElButton type="primary" @click="edit = true">Edit profile</ElButton
+    ><ElButton type="primary" @click="openProfile">Edit profile</ElButton
     ><ElDialog v-model="edit" title="Edit profile" width="480px"
       ><ElForm
         ref="formRef"
-        :model="data"
+        :model="profileDraft"
         :rules="{ name: rules.name, email: rules.email }"
         label-position="top"
-        ><ElFormItem label="Name" prop="name"><ElInput v-model="data.name" /></ElFormItem
+        ><ElFormItem label="Name" prop="name"
+          ><ElInput v-model="profileDraft.name" aria-label="Name" /></ElFormItem
         ><ElFormItem label="Email" prop="email"
-          ><ElInput v-model="data.email" /></ElFormItem></ElForm
+          ><ElInput v-model="profileDraft.email" aria-label="Email" /></ElFormItem
+        ><ElFormItem label="Country"><ElInput v-model="profileDraft.country" /></ElFormItem></ElForm
       ><template #footer
         ><ElButton @click="edit = false">Cancel</ElButton
-        ><ElButton type="primary" @click="submit">Save changes</ElButton></template
+        ><ElButton type="primary" @click="saveProfile">Save changes</ElButton></template
       ></ElDialog
     ></SectionCard
   >

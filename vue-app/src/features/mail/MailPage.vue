@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import {
   ElButton,
@@ -21,7 +21,11 @@ const store = useMailStore(),
   page = usePage(),
   route = useRoute(),
   router = useRouter()
-const folder = ref(String(route.query.folder || 'inbox')),
+const folder = computed(() =>
+    ['inbox', 'starred', 'trash'].includes(String(route.query.folder))
+      ? String(route.query.folder)
+      : 'inbox',
+  ),
   query = ref(''),
   preview = ref(false),
   composeForm = ref<InstanceType<typeof ElForm>>()
@@ -44,7 +48,21 @@ const messages = computed(() =>
 const current = computed(() =>
   store.messages.find((message) => message.id === String(route.query.message || '1')),
 )
-if (mode.value === 'read' && current.value) current.value.read = true
+watch(
+  [mode, current],
+  () => {
+    if (mode.value === 'read' && current.value) current.value.read = true
+  },
+  { immediate: true },
+)
+// Render preview as text so pasted HTML cannot inject executable content.
+const previewBody = computed(() => {
+  const document = new DOMParser().parseFromString(
+    store.draft.body.replace(/<\/(p|h[1-6]|li)>/gi, '</$1>\n').replace(/<br\s*\/?\s*>/gi, '\n'),
+    'text/html',
+  )
+  return document.body.textContent || ''
+})
 async function showPreview() {
   if (await composeForm.value?.validate().catch(() => false)) preview.value = true
 }
@@ -57,7 +75,6 @@ function trash(id: string) {
 }
 
 function selectFolder(value: string) {
-  folder.value = value
   router.push({ path: '/mail/inbox', query: { folder: value } })
 }
 function reply() {
@@ -131,7 +148,7 @@ function removeCurrent() {
           :rules="[{ required: true, whitespace: true, message: 'Enter a subject' }]"
           ><ElInput v-model="store.draft.subject" aria-label="Subject" /></ElFormItem
         ><ElFormItem label="Message"><RichEditor v-model="store.draft.body" /></ElFormItem
-        ><ElUpload :auto-upload="false" :limit="5"
+        ><ElUpload v-model:file-list="store.attachments" :auto-upload="false" :limit="5"
           ><ElButton>Select attachments</ElButton
           ><template #tip
             ><p class="muted">Attachments remain on your device and are not uploaded.</p></template
@@ -165,6 +182,10 @@ function removeCurrent() {
   <ElDialog v-model="preview" title="Message preview" width="620px"
     ><p><b>To:</b> {{ store.draft.to }}</p>
     <p><b>Subject:</b> {{ store.draft.subject }}</p>
+    <div class="mail-preview-body">{{ previewBody }}</div>
+    <ul v-if="store.attachments.length" aria-label="Attachments">
+      <li v-for="file in store.attachments" :key="file.uid">{{ file.name }}</li>
+    </ul>
     <p class="muted">
       Preview only — no mail service is configured. Your rich-text draft remains in the editor.
     </p>
