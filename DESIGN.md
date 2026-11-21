@@ -20,3 +20,10 @@ Shared layout components preserve the original variants and per-page navigation
 selection. Bootstrap continues to own modal, tab, dropdown and collapse behavior;
 feature modules continue to own their own chart and calendar lifecycles. Styling
 remains in `HTML/assets/less/`, with existing compiled CSS paths preserved.
+
+## Vue successor
+
+`vue-app/` is the new Vue 3 + Element Plus application. Its own `DESIGN.md` and
+`UX-CONTRACT.md` govern the successor UI. The static sources above remain a frozen
+migration baseline. See `MIGRATION.md` for route correspondence and deliberate
+consolidation of legacy plugins. Vue production output is `vue-app/dist/`.

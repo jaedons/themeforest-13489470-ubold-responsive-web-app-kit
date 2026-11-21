@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "vue:dev": "npm --prefix vue-app run dev",
+    "vue:build": "npm --prefix vue-app run build",
+    "vue:test": "npm --prefix vue-app test",
+    "vue:test:e2e": "npm --prefix vue-app run test:e2e",
     "build": "npm run build:pages && npm run build:css",
     "build:pages": "node scripts/build-pages.mjs",
     "check:components": "node scripts/build-pages.mjs --check",

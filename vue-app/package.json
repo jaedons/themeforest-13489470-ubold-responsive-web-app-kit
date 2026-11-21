@@ -1,0 +1,40 @@
+{
+  "name": "ubold-vue-element-plus",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "format": "prettier --write src tests scripts *.ts *.json *.md",
+    "format:check": "prettier --check src tests scripts *.ts *.json *.md",
+    "dev": "vite --host 127.0.0.1",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "vitest run",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "2.3.2",
+    "@fullcalendar/vue3": "7.1.5",
+    "@svg-maps/world": "2.0.0",
+    "@tiptap/starter-kit": "3.35.0",
+    "@tiptap/vue-3": "3.35.0",
+    "chart.js": "4.6.1",
+    "element-plus": "2.14.8",
+    "pinia": "4.1.0",
+    "vue": "3.5.46",
+    "vue-router": "5.5.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.65.1",
+    "@vitejs/plugin-vue": "6.0.11",
+    "@vue/test-utils": "2.6.0",
+    "jsdom": "31.0.1",
+    "prettier": "3.10.1",
+    "sass": "1.108.2",
+    "typescript": "6.0.3",
+    "unplugin-element-plus": "0.11.2",
+    "vite": "8.3.8",
+    "vitest": "5.1.1",
+    "vue-tsc": "3.3.14"
+  }
+}

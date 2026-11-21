@@ -1,3 +1,10 @@
 node_modules/
 test-results/
 debug.log
+dist/
+coverage/
+playwright-report/
+.env
+.env.local
+.env.*.local
+vue-app/*.log

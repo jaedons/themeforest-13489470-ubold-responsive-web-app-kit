@@ -1,0 +1,175 @@
+import { test, expect } from '@playwright/test'
+import { mkdir } from 'node:fs/promises'
+test('dashboard, responsive navigation and theme controls', async ({ page }) => {
+  await page.goto('/dashboard')
+  await expect(page.locator('[data-testid="chart-canvas"]')).toHaveCount(2)
+  await page.getByTestId('nav-toggle').click()
+  await expect(page.locator('.workspace')).toHaveClass(/is-collapsed/)
+  await page.getByTestId('nav-toggle').click()
+  await page.getByRole('button', { name: 'Open settings' }).click()
+  await page.getByRole('switch', { name: 'Dark appearance' }).locator('..').click()
+  await expect(page.locator('html')).toHaveClass(/dark/)
+  await page.getByRole('switch', { name: 'Dark appearance' }).locator('..').click()
+  await page.getByRole('button', { name: 'Close this dialog' }).click()
+  await expect(page.getByRole('dialog', { name: 'Workspace settings' })).toBeHidden()
+  await page.waitForTimeout(350)
+  await mkdir('test-results/screenshots', { recursive: true })
+  await page.screenshot({ path: 'test-results/screenshots/dashboard-desktop.png', fullPage: true })
+  await page.setViewportSize({ width: 390, height: 844 })
+  await page.getByTestId('nav-toggle').click()
+  await expect(page.getByRole('dialog', { name: 'Navigation' })).toBeVisible()
+  await page.getByRole('button', { name: 'Close this dialog' }).click()
+  await expect(page.getByRole('dialog', { name: 'Navigation' })).toBeHidden()
+  await page.waitForTimeout(350)
+  await expect(page.getByRole('button', { name: 'Account menu' })).toBeVisible()
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(391)
+  await page.screenshot({ path: 'test-results/screenshots/dashboard-mobile.png', fullPage: true })
+})
+test('records search, create, edit and delete', async ({ page }) => {
+  await page.goto('/crm/customers')
+  const search = page.getByRole('textbox', { name: 'Search records' })
+  await search.fill('no-such-record-123')
+  await expect(page.getByText('No matching records')).toBeVisible()
+  await search.clear()
+  await page.getByRole('button', { name: 'Add record', exact: true }).click()
+  const dialog = page.getByRole('dialog')
+  await dialog.getByRole('textbox').first().fill('Vue Acceptance Customer')
+  await dialog.getByRole('button', { name: 'Save changes' }).click()
+  await expect(dialog).toBeHidden()
+  await search.fill('Vue Acceptance Customer')
+  await expect(page.locator('.el-table__body-wrapper')).toContainText('Vue Acceptance Customer')
+  await page.getByRole('button', { name: 'Edit', exact: true }).first().click()
+  await dialog.getByRole('textbox').first().fill('Updated Acceptance Customer')
+  await dialog.getByRole('button', { name: 'Save changes' }).click()
+  await search.fill('Updated Acceptance Customer')
+  await page.getByRole('button', { name: 'Delete', exact: true }).first().click()
+  await page.locator('.el-message-box').getByRole('button', { name: 'Delete', exact: true }).click()
+  await expect(page.getByText('No matching records')).toBeVisible()
+})
+test('calendar creates, edits and deletes Vue-managed events', async ({ page }) => {
+  await page.goto('/apps/calendar')
+  await page.getByTestId('add-event').click()
+  const dialog = page.getByRole('dialog', { name: /^(Add|Edit) event$/ })
+  await dialog.getByRole('textbox', { name: 'Event name' }).fill('Vue Acceptance Event')
+  await dialog.getByRole('button', { name: 'Save event' }).click()
+  await expect(dialog).toBeHidden()
+  await expect(page.getByText('4 scheduled events')).toBeVisible()
+  await page.getByText('Vue Acceptance Event', { exact: true }).click()
+  await dialog.getByRole('textbox', { name: 'Event name' }).fill('Updated Vue Event')
+  await dialog.getByRole('button', { name: 'Save event' }).click()
+  await expect(dialog).toBeHidden()
+  await page.getByText('Updated Vue Event', { exact: true }).click()
+  await dialog.getByRole('button', { name: 'Delete event' }).click()
+  await page.locator('.el-message-box').getByRole('button', { name: 'Delete', exact: true }).click()
+  await expect(page.getByText('3 scheduled events')).toBeVisible()
+  await expect(dialog).toBeHidden()
+  await page.screenshot({ path: 'test-results/screenshots/calendar.png', fullPage: true })
+})
+test('Element Plus dialogs and tabs', async ({ page }) => {
+  await page.goto('/ui/modals')
+  await page.getByRole('button', { name: 'Standard dialog', exact: true }).click()
+  await expect(page.getByRole('dialog', { name: 'Sample dialog' })).toBeVisible()
+  await page.getByRole('dialog').getByRole('button', { name: 'Cancel', exact: true }).click()
+  await expect(page.getByRole('dialog')).toBeHidden()
+  await page.goto('/ui/tabs')
+  await page.getByRole('tab', { name: 'Profile', exact: true }).click()
+  await expect(page.getByRole('tabpanel', { name: 'Profile' })).toBeVisible()
+})
+test('account forms validate locally without claiming authentication', async ({ page }) => {
+  await page.goto('/login')
+  await page.getByRole('button', { name: 'Validate sign-in form' }).click()
+  await expect(page.getByText('Enter your email', { exact: true })).toBeVisible()
+  await page.getByRole('textbox', { name: 'Email', exact: true }).fill('demo@example.com')
+  await page.getByRole('textbox', { name: 'Password', exact: true }).fill('samplepass123')
+  await page.getByRole('button', { name: 'Validate sign-in form' }).click()
+  await expect(
+    page.getByText('Form validated locally. No account was created or authenticated.'),
+  ).toBeVisible()
+})
+test('mail draft, product filters and image cropping', async ({ page }) => {
+  await page.goto('/mail/compose')
+  await page.getByRole('textbox', { name: 'Recipient', exact: true }).fill('demo@example.com')
+  await page.getByRole('textbox', { name: 'Subject', exact: true }).fill('Local draft')
+  await page.getByRole('button', { name: 'Preview message' }).click()
+  await expect(page.getByRole('dialog', { name: 'Message preview' })).toBeVisible()
+  await page.goto('/ecommerce/products')
+  await page.getByRole('textbox', { name: 'Search products' }).fill('iPhone')
+  await expect(page.locator('.product-card')).toHaveCount(1)
+  await page.getByRole('button', { name: 'Add to preview basket' }).click()
+  await page.getByRole('button', { name: /Preview basket/ }).click()
+  await expect(page.getByRole('heading', { name: 'Total: $699' })).toBeVisible()
+  await page.goto('/forms/image-crop')
+  const download = page.waitForEvent('download')
+  await page.getByRole('button', { name: 'Download crop' }).click()
+  expect((await download).suggestedFilename()).toBe('ubold-crop.png')
+})
+test('validated form, advanced controls and multi-step wizard', async ({ page }) => {
+  await page.goto('/forms/validation')
+  await page.getByRole('button', { name: 'Validate form' }).click()
+  await expect(page.getByText('Enter your name', { exact: true })).toBeVisible()
+  await page.goto('/forms/wizard')
+  await page.getByRole('button', { name: 'Next', exact: true }).click()
+  await expect(page.getByText('Enter your name', { exact: true })).toBeVisible()
+  await page.getByLabel('Name', { exact: true }).fill('Vue Reviewer')
+  await page.getByLabel('Email', { exact: true }).fill('reviewer@example.com')
+  await page.getByRole('button', { name: 'Next', exact: true }).click()
+  await page.getByRole('button', { name: 'Next', exact: true }).click()
+  await expect(page.getByText('Vue Reviewer', { exact: true })).toBeVisible()
+  await page
+    .locator('.el-checkbox')
+    .filter({ hasText: 'I understand this is a local demonstration' })
+    .click()
+  await page.getByRole('button', { name: 'Finish demo' }).click()
+  await expect(page.getByText('Demo completed', { exact: true })).toBeVisible()
+})
+test('profile draft cancellation does not mutate saved profile', async ({ page }) => {
+  await page.goto('/extras/profile')
+  await page.getByRole('button', { name: 'Edit profile' }).click()
+  const dialog = page.getByRole('dialog', { name: 'Edit profile' })
+  await dialog.getByLabel('Name', { exact: true }).fill('Uncommitted name')
+  await dialog.getByRole('button', { name: 'Close', exact: true }).click()
+  await expect(dialog).toBeHidden()
+  await expect(page.locator('.profile-heading')).toContainText('John Doe')
+  await expect(page.locator('.profile-heading')).not.toContainText('Uncommitted name')
+})
+test('header search and browser history use Vue routes', async ({ page }) => {
+  await page.goto('/dashboard')
+  await page.getByRole('textbox', { name: 'Find a page' }).fill('calendar')
+  await page.locator('.search-results').getByRole('link').first().click()
+  await expect(page).toHaveURL(/\/apps\/calendar$/)
+  await page.goBack()
+  await expect(page).toHaveURL(/\/dashboard$/)
+})
+test('local map reports a failed load and can recover', async ({ page }) => {
+  let fail = true
+  await page.route('**/assets/data/world.json', (route) =>
+    fail ? route.fulfill({ status: 503, body: 'Unavailable' }) : route.continue(),
+  )
+  await page.goto('/maps/vector')
+  await expect(
+    page.getByText('The local world map could not be loaded. Retry to request it again.'),
+  ).toBeVisible()
+  fail = false
+  await page.getByRole('button', { name: 'Retry map' }).click()
+  await expect(page.getByRole('img', { name: 'Interactive world map' })).toBeVisible()
+  expect(await page.locator('.world-map path').count()).toBeGreaterThan(200)
+  await expect(page.locator('.world-map path.selected')).toHaveCount(1)
+})
+test('representative workflows fit a narrow phone viewport', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 })
+  for (const path of [
+    '/crm/customers',
+    '/forms/advanced',
+    '/apps/calendar',
+    '/ui/modals',
+    '/mail/compose',
+    '/ecommerce/products',
+  ]) {
+    await page.goto(path)
+    await expect(page.locator('h1')).toBeVisible()
+    expect(
+      await page.evaluate(() => document.documentElement.scrollWidth),
+      path,
+    ).toBeLessThanOrEqual(391)
+  }
+})
