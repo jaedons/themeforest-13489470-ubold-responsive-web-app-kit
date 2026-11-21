@@ -1,5 +1,9 @@
 # 组件划分与开发指南
 
+分支约束：本版本在 `upgrade/stable-dependencies` 独立维护，与 Vue 版本
+`refactor/vue-element-plus` 长期并存，两个分支互不合并、互不覆盖、不得删除。
+具体规则见 [双版本维护策略](BRANCH-POLICY.md)。
+
 项目保持 HTML + Bootstrap + jQuery 的技术栈，采用**构建时组件组合**。
 组件在构建时展开成完整 HTML，不增加浏览器端请求，也不改变原页面 URL。
 
