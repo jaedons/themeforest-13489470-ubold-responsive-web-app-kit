@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { ChartType } from 'chart.js'
 import { computed } from 'vue'
-import SectionCard from '../components/display/SectionCard.vue'
+import { UiSectionCard as SectionCard } from '@jaedons/admin-ui'
 import ChartView from '../components/charts/ChartView.vue'
 import { usePage } from '../composables/usePage'
 const page = usePage()

@@ -1,6 +1,6 @@
 import { it, expect } from 'vitest'
 import { mount, flushPromises } from '@vue/test-utils'
-import DataTable from '../../src/components/tables/DataTable.vue'
+import { UiDataTable as DataTable } from '@jaedons/admin-ui'
 import { ElPagination } from 'element-plus'
 const rows = Array.from({ length: 14 }, (_, i) => ({
   id: String(i),

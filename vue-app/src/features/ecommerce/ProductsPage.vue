@@ -10,7 +10,7 @@ import {
   ElDrawer,
   ElInputNumber,
 } from 'element-plus'
-import SectionCard from '../../components/display/SectionCard.vue'
+import { UiSectionCard as SectionCard } from '@jaedons/admin-ui'
 const products = [
   { id: 'iphone', name: 'Apple iPhone', price: 699, category: 'Phones', image: 'iphone.jpg' },
   { id: 'samsung', name: 'Samsung Phone', price: 499, category: 'Phones', image: 'samsung.jpg' },

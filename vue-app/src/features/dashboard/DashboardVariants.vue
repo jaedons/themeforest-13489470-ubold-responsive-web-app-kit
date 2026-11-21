@@ -11,9 +11,9 @@ import {
   ElMessage,
 } from 'element-plus'
 import StatCard from '../../components/display/StatCard.vue'
-import SectionCard from '../../components/display/SectionCard.vue'
+import { UiSectionCard as SectionCard } from '@jaedons/admin-ui'
 import ChartView from '../../components/charts/ChartView.vue'
-import DataTable from '../../components/tables/DataTable.vue'
+import { UiDataTable as DataTable } from '@jaedons/admin-ui'
 import { usePage } from '../../composables/usePage'
 const page = usePage()
 const analytics = computed(() => page.value.id === 'dashboard_2')

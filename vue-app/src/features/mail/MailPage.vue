@@ -13,7 +13,7 @@ import {
   ElUpload,
 } from 'element-plus'
 import { Star, StarFilled, Delete, Back } from '@element-plus/icons-vue'
-import SectionCard from '../../components/display/SectionCard.vue'
+import { UiSectionCard as SectionCard } from '@jaedons/admin-ui'
 import RichEditor from '../../components/forms/RichEditor.vue'
 import { useMailStore } from './store'
 import { usePage } from '../../composables/usePage'

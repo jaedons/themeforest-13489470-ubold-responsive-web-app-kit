@@ -3,7 +3,7 @@ import { computed, ref } from 'vue'
 import { ElSelect, ElOption, ElProgress, ElTable, ElTableColumn, ElTag } from 'element-plus'
 import DashboardVariants from './DashboardVariants.vue'
 import StatCard from '../../components/display/StatCard.vue'
-import SectionCard from '../../components/display/SectionCard.vue'
+import { UiSectionCard as SectionCard } from '@jaedons/admin-ui'
 import ChartView from '../../components/charts/ChartView.vue'
 import { usePage } from '../../composables/usePage'
 const page = usePage(),

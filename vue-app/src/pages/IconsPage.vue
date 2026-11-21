@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref, onMounted } from 'vue'
 import { ElInput, ElMessage, ElEmpty } from 'element-plus'
-import SectionCard from '../components/display/SectionCard.vue'
+import { UiSectionCard as SectionCard } from '@jaedons/admin-ui'
 import { usePage } from '../composables/usePage'
 const page = usePage(),
   query = ref('')

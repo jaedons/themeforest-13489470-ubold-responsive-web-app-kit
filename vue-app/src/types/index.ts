@@ -14,8 +14,4 @@ export interface PageDefinition {
   images: string[]
   icons: string[]
 }
-export interface TableColumn {
-  key: string
-  label: string
-}
-export type DataRow = Record<string, string | number> & { id: string }
+export type { TableColumn, DataRow } from '@jaedons/admin-ui'

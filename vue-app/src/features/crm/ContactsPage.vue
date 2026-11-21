@@ -11,7 +11,7 @@ import {
   ElMessage,
   ElEmpty,
 } from 'element-plus'
-import SectionCard from '../../components/display/SectionCard.vue'
+import { UiSectionCard as SectionCard } from '@jaedons/admin-ui'
 const query = ref(''),
   dialog = ref(false),
   name = ref(''),

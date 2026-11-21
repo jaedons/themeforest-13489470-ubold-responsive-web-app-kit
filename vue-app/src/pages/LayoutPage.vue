@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ElButton, ElSwitch, ElEmpty, ElTag } from 'element-plus'
-import SectionCard from '../components/display/SectionCard.vue'
+import { UiSectionCard as SectionCard } from '@jaedons/admin-ui'
 import { usePage } from '../composables/usePage'
 import { useLayoutStore } from '../app/stores/layout'
 const page = usePage(),

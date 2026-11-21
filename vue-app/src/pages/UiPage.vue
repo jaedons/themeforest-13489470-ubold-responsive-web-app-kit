@@ -33,7 +33,7 @@ import {
   ElCol,
   ElEmpty,
 } from 'element-plus'
-import SectionCard from '../components/display/SectionCard.vue'
+import { UiSectionCard as SectionCard } from '@jaedons/admin-ui'
 import StatCard from '../components/display/StatCard.vue'
 import DialogExamples from '../components/display/DialogExamples.vue'
 import ChartView from '../components/charts/ChartView.vue'

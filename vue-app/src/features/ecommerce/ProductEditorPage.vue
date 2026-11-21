@@ -13,7 +13,7 @@ import {
   ElUpload,
   ElTag,
 } from 'element-plus'
-import SectionCard from '../../components/display/SectionCard.vue'
+import { UiSectionCard as SectionCard } from '@jaedons/admin-ui'
 import RichEditor from '../../components/forms/RichEditor.vue'
 const initialValues = () => ({
   name: '',

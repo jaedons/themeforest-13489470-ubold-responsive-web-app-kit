@@ -9,8 +9,8 @@ import {
   ElMessage,
   ElMessageBox,
 } from 'element-plus'
-import DataTable from '../components/tables/DataTable.vue'
-import SectionCard from '../components/display/SectionCard.vue'
+import { UiDataTable as DataTable } from '@jaedons/admin-ui'
+import { UiSectionCard as SectionCard } from '@jaedons/admin-ui'
 import { usePage } from '../composables/usePage'
 import type { DataRow, TableColumn } from '../types'
 const page = usePage(),

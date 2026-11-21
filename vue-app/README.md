@@ -29,6 +29,20 @@ npm run test:e2e  # Playwright 启动独立生产预览服务执行验收
 浏览器验收前先构建；首次运行需 `npx playwright install chromium`。
 可以通过 `PLAYWRIGHT_CHROMIUM_EXECUTABLE` 指定已安装的 Chromium 可执行文件。
 
+## 公共组件库接入
+
+SectionCard、StatCard、DataTable 已提取至独立本地项目 `admin-ui`。
+本项目安装 `vendor/jaedons-admin-ui-0.1.0.tgz`，而不是引用库源目录。
+`npm ci` 可直接还原依赖，无需先检出组件库。
+
+```ts
+import { UiSectionCard, UiStatCard, UiDataTable } from '@jaedons/admin-ui'
+import '@jaedons/admin-ui/style.css'
+```
+
+现有数字图标约定由本项目 `src/components/display/StatCard.vue` 适配。
+库 API 及升级步骤见 [组件库接入说明](COMPONENT-LIBRARY.md)。
+
 ## 目录职责
 
 - `src/app/`：路由、导航目录、Pinia 布局状态。

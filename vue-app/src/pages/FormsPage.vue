@@ -26,7 +26,7 @@ import {
   ElDescriptions,
   ElDescriptionsItem,
 } from 'element-plus'
-import SectionCard from '../components/display/SectionCard.vue'
+import { UiSectionCard as SectionCard } from '@jaedons/admin-ui'
 import RichEditor from '../components/forms/RichEditor.vue'
 import UploadPanel from '../components/forms/UploadPanel.vue'
 import ImageCropper from '../components/forms/ImageCropper.vue'

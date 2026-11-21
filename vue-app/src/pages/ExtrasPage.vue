@@ -25,7 +25,7 @@ import {
   ElTree,
   ElProgress,
 } from 'element-plus'
-import SectionCard from '../components/display/SectionCard.vue'
+import { UiSectionCard as SectionCard } from '@jaedons/admin-ui'
 import InvoiceView from '../components/display/InvoiceView.vue'
 import { usePage } from '../composables/usePage'
 import { pages, navigation } from '../app/catalog'

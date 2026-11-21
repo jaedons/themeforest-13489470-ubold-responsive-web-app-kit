@@ -11,8 +11,8 @@ Use Noto Sans / Segoe UI / system sans-serif fallbacks, restrained 5px panel rad
 and the shared type scale in `src/styles/main.scss`.
 
 The canonical owners are Element Plus form/select/date/table/dialog primitives,
-`AdminLayout.vue` for the shell, `AppNavigation.vue` for navigation, `DataTable.vue`
-for table combinations, and feature-specific modules for business behavior.
+`AdminLayout.vue` for the shell, `AppNavigation.vue` for navigation, and
+`@jaedons/admin-ui` for SectionCard, StatCard and DataTable compositions, and feature-specific modules for business behavior.
 Do not import Bootstrap UI CSS, jQuery, or old plugin initialization scripts.
 
 Mobile navigation is a drawer. Content must not shrink to fit a visible sidebar.

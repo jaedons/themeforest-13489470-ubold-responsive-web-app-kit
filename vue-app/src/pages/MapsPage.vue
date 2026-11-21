@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, defineAsyncComponent } from 'vue'
 import { ElSelect, ElOption, ElAlert, ElButton, ElTag } from 'element-plus'
-import SectionCard from '../components/display/SectionCard.vue'
+import { UiSectionCard as SectionCard } from '@jaedons/admin-ui'
 import { usePage } from '../composables/usePage'
 const page = usePage()
 const WorldMap = defineAsyncComponent(() => import('../features/maps/WorldMap.vue'))

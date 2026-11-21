@@ -26,7 +26,7 @@ import {
   ElMessageBox,
   ElTag,
 } from 'element-plus'
-import SectionCard from '../../components/display/SectionCard.vue'
+import { UiSectionCard as SectionCard } from '@jaedons/admin-ui'
 const day = new Date(),
   date = new Date(day.getTime() - day.getTimezoneOffset() * 60000).toISOString().slice(0, 10)
 const events = ref<EventInput[]>([
