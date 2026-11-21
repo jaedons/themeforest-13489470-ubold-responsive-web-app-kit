@@ -1,5 +1,9 @@
 # Ubold Vue + Element Plus
 
+分支约束：本版本在 `refactor/vue-element-plus` 独立维护，与静态版本
+`upgrade/stable-dependencies` 长期并存，两个分支互不合并、互不覆盖、不得删除。
+具体规则见 [双版本维护策略](../BRANCH-POLICY.md)。
+
 独立的 Vue 3 重构版本。原 `HTML/` 和静态组件 `src/` 保留为迁移基线；新应用不加载旧页面、
 jQuery、Bootstrap JavaScript 或兼容层，也不通过 iframe/v-html 包装原模板。
 
