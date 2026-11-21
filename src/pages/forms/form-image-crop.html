@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
+		<meta name="author" content="Coderthemes">
+
+		<link rel="shortcut icon" href="assets/images/favicon_1.ico">
+
+		<title>Ubold - Responsive Admin Dashboard Template</title>
+		<link href="assets/plugins/cropper/cropper.css" rel="stylesheet" type="text/css" />
+		
+		<!-- @component runtime/styles -->
+
+        <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="assets/js/modernizr.min.js"></script>
+
+	</head>
+
+	<body class="fixed-left">
+
+		<!-- Begin page -->
+		<div id="wrapper">
+
+            <!-- @component layout/topbar {"compactClass":""} -->
+
+
+            <!-- @component layout/sidebar {"nav":{"page-form-image-crop":" active","group-forms":" active"}} -->
+
+			<!-- ============================================================== -->
+			<!-- Start right Content here -->
+			<!-- ============================================================== -->
+			<div class="content-page">
+				<!-- Start content -->
+				<div class="content">
+					<div class="container">
+
+						<!-- Page-Title -->
+						<div class="row">
+							<div class="col-sm-12">
+								<h4 class="page-title">Image Crop</h4>
+								<ol class="breadcrumb">
+									<li>
+										<a href="#">Ubold</a>
+									</li>
+									<li>
+										<a href="#">Forms</a>
+									</li>
+									<li class="active">
+										Image Crop
+									</li>
+								</ol>
+							</div>
+						</div>
+						
+						<div class="row">
+                    <div class="col-lg-8">
+                        <div class="card-box">
+                            <h4 class="m-t-0 m-b-30 header-title"><b>Heading</b></h4>
+
+                            <div>
+                              <img class="cropper" src="assets/images/big/img1.jpg" alt="Picture">
+                            </div>
+
+                            <hr>
+
+                            <ul class="list-unstyled list-inline showcase-btn">
+                                <li><button id="reset" type="button" class="btn btn-warning waves-effect waves-light m-t-10">Reset</button></li>
+                                <li><button id="reset2" type="button" class="btn  btn-warning waves-effect waves-light m-t-10">Reset (deep)</button></li>
+                                <li><button id="clear" type="button" class="btn btn-primary waves-effect waves-light m-t-10">Release</button></li>
+                                <li><button id="destroy" type="button" class="btn btn-danger waves-effect waves-light m-t-10">Destroy</button></li>
+                                <li><button id="enable" type="button" class="btn btn-success waves-effect waves-light m-t-10">Enable</button></li>
+                                <li><button id="disable" type="button" class="btn btn-warning waves-effect waves-light m-t-10">Disable</button></li>
+                                <li><button id="zoomIn" type="button" class="btn btn-info waves-effect waves-light m-t-10">Zoom In</button></li>
+                                <li><button id="zoomOut" type="button" class="btn btn-info waves-effect waves-light m-t-10">Zoom Out</button></li>
+                                <li><button id="rotateLeft" type="button" class="btn btn-info waves-effect waves-light m-t-10">Rotate Left</button></li>
+                                <li><button id="rotateRight" type="button" class="btn btn-info waves-effect waves-light m-t-10">Rotate Right</button></li>
+                                <li><button id="setData" type="button" class="btn btn-primary waves-effect waves-light m-t-10">Set Data</button></li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-4">
+
+                        <div class="card-box">
+                            <h4 class="m-t-0 m-b-30 header-title"><b>Preview</b></h4>
+
+                            <div class="preview preview-md"></div>
+                            <div class="preview preview-sm"></div>
+                            <div class="preview preview-xs"></div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <div class="card-box">
+                            <h4 class="m-t-0 m-b-30 header-title"><b>Current Values</b></h4>
+
+                            <div class="row">
+                                <div class="col-lg-6 m-t-10">
+                                    <div class="input-group">
+                                    <span class="input-group-addon">X</span>
+                                    <input class="form-control" id="dataX" type="text" placeholder="x">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 m-t-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Y</span>
+                                        <input class="form-control" id="dataY" type="text" placeholder="y">
+                                      </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 m-t-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">W</span>
+                                        <input class="form-control" id="dataWidth" type="text" placeholder="width">
+                                      </div>
+                                </div>
+                                <div class="col-lg-6 m-t-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">H</span>
+                                        <input class="form-control" id="dataHeight" type="text" placeholder="height">
+                                      </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 m-t-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Rotate</span>
+                                        <input class="form-control" id="dataRotate" type="text" placeholder="rotate">
+                                      </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="card-box">
+                            <h4 class="m-t-0 m-b-30 header-title"><b>Actions</b></h4>
+
+                            <div class="input-group m-t-10">
+                                <span class="input-group-btn">
+                                <button class="btn btn-info waves-effect waves-light" id="getData" type="button">Get Data</button>
+                                </span>
+                                <input class="form-control" id="showData" type="text">
+                            </div>
+
+
+                            <div class="input-group m-t-15">
+                                <span class="input-group-btn">
+                                <button class="btn btn-info waves-effect waves-light" id="getImageData" type="button">Get Image Data</button>
+                                </span>
+                                <input class="form-control" id="showImageData" type="text">
+                            </div>
+
+                            <div class="input-group m-t-15">
+                                <span class="input-group-btn">
+                                <button class="btn btn-primary waves-effect waves-light" id="replace" type="button">Replace</button>
+                                </span>
+                                <input class="form-control" id="replaceWith" type="text" value="assets/images/big/img4.jpg">
+                            </div>
+
+                            <div class="input-group m-t-15">
+                                <span class="input-group-btn">
+                                <button class="btn btn-primary waves-effect waves-light" id="setAspectRatio" type="button">Set Aspect Ratio</button>
+                                </span>
+                                <input class="form-control" id="aspectRatio" name="aspectRatio" type="text" value="auto">
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-6 m-t-15"><button class="btn btn-primary waves-effect waves-light btn-block" id="getDataURL" type="button">Get Data URL</button></div>
+                                <div class="col-lg-6 m-t-15"><button class="btn btn-primary waves-effect waves-light btn-block" id="getDataURL2" type="button">Get Data URL (JPG)</button></div>
+                            </div>
+
+                            <textarea class="form-control m-t-15" id="dataURL" rows="3"></textarea>
+
+                            <div id="showDataURL" class="m-t-15"></div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                       
+
+
+                    </div> <!-- container -->
+                               
+                </div> <!-- content -->
+
+                <!-- @component layout/footer {"alignment":""} -->
+
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Right content here -->
+            <!-- ============================================================== -->
+
+
+            <!-- @component layout/rightbar -->
+
+
+        </div>
+        <!-- END wrapper -->
+
+        <script>
+            var resizefunc = [];
+        </script>
+
+        <!-- jQuery  -->
+        <!-- @component runtime/scripts -->
+
+
+        <!-- @component runtime/theme-scripts -->
+        
+        <script src="assets/plugins/cropper/cropper.min.js"></script>
+        
+         <script>
+			$(function() {
+      var $cropper = $(".cropper"),
+          $dataX = $("#dataX"),
+          $dataY = $("#dataY"),
+          $dataHeight = $("#dataHeight"),
+          $dataWidth = $("#dataWidth"),
+          $dataRotate = $("#dataRotate"),
+          console = window.console || {log:$.noop},
+          cropper;
+
+      $cropper.cropper({
+        aspectRatio: 16 / 9,
+        data: {
+          x: 420,
+          y: 50,
+          width: 640,
+          height: 360
+        },
+        preview: ".preview",
+
+        // autoCrop: false,
+        // dragCrop: false,
+        // modal: false,
+        // moveable: false,
+        // resizeable: false,
+        // scalable: false,
+
+        // maxWidth: 480,
+        // maxHeight: 270,
+        // minWidth: 160,
+        // minHeight: 90,
+
+        done: function(data) {
+          $dataX.val(data.x);
+          $dataY.val(data.y);
+          $dataHeight.val(data.height);
+          $dataWidth.val(data.width);
+          $dataRotate.val(data.rotate);
+        },
+        build: function(e) {
+          console.log(e.type);
+        },
+        built: function(e) {
+          console.log(e.type);
+        },
+        dragstart: function(e) {
+          console.log(e.type);
+        },
+        dragmove: function(e) {
+          console.log(e.type);
+        },
+        dragend: function(e) {
+          console.log(e.type);
+        }
+      });
+
+      cropper = $cropper.data("cropper");
+
+      $cropper.on({
+        "build.cropper": function(e) {
+          console.log(e.type);
+          // e.preventDefault();
+        },
+        "built.cropper": function(e) {
+          console.log(e.type);
+          // e.preventDefault();
+        },
+        "dragstart.cropper": function(e) {
+          console.log(e.type);
+          // e.preventDefault();
+        },
+        "dragmove.cropper": function(e) {
+          console.log(e.type);
+          // e.preventDefault();
+        },
+        "dragend.cropper": function(e) {
+          console.log(e.type);
+          // e.preventDefault();
+        }
+      });
+
+      $("#reset").click(function() {
+        $cropper.cropper("reset");
+      });
+
+      $("#reset2").click(function() {
+        $cropper.cropper("reset", true);
+      });
+
+      $("#clear").click(function() {
+        $cropper.cropper("clear");
+      });
+
+      $("#destroy").click(function() {
+        $cropper.cropper("destroy");
+      });
+
+      $("#enable").click(function() {
+        $cropper.cropper("enable");
+      });
+
+      $("#disable").click(function() {
+        $cropper.cropper("disable");
+      });
+
+      $("#zoomIn").click(function() {
+        $cropper.cropper("zoom", 0.1);
+      });
+
+      $("#zoomOut").click(function() {
+        $cropper.cropper("zoom", -0.1);
+      });
+
+      $("#rotateLeft").click(function() {
+        $cropper.cropper("rotate", -90);
+      });
+
+      $("#rotateRight").click(function() {
+        $cropper.cropper("rotate", 90);
+      });
+
+      $("#setAspectRatio").click(function() {
+        $cropper.cropper("setAspectRatio", $("#aspectRatio").val());
+      });
+
+      $("#replace").click(function() {
+        $cropper.cropper("replace", $("#replaceWith").val());
+      });
+
+      $("#getImageData").click(function() {
+        $("#showImageData").val(JSON.stringify($cropper.cropper("getImageData")));
+      });
+
+      $("#setData").click(function() {
+        $cropper.cropper("setData", {
+          x: $dataX.val(),
+          y: $dataY.val(),
+          width: $dataWidth.val(),
+          height: $dataHeight.val(),
+          rotate: $dataRotate.val()
+        });
+      });
+
+      $("#getData").click(function() {
+        $("#showData").val(JSON.stringify($cropper.cropper("getData")));
+      });
+
+      $("#getDataURL").click(function() {
+        var dataURL = $cropper.cropper("getDataURL");
+
+        $("#dataURL").text(dataURL);
+        $("#showDataURL").html('<img src="' + dataURL + '">');
+      });
+
+      $("#getDataURL2").click(function() {
+        var dataURL = $cropper.cropper("getDataURL", "image/jpeg");
+
+        $("#dataURL").text(dataURL);
+        $("#showDataURL").html('<img src="' + dataURL + '">');
+      });
+    });
+
+		</script>
+
+
+	
+	</body>
+</html>

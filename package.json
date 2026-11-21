@@ -3,6 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "build": "npm run build:pages && npm run build:css",
+    "build:pages": "node scripts/build-pages.mjs",
+    "check:components": "node scripts/build-pages.mjs --check",
+    "test:components": "node --test scripts/component-renderer.test.mjs",
+    "pretest": "npm run check:components && npm run test:components",
+    "prestart": "npm run build:pages",
+    "dev": "node scripts/dev.mjs",
     "vendor": "node scripts/vendor.mjs",
     "build:css": "node scripts/build-css.mjs",
     "test": "node scripts/verify.mjs",

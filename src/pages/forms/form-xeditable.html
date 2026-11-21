@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
+        <meta name="author" content="Coderthemes">
+
+        <link rel="shortcut icon" href="assets/images/favicon_1.ico">
+
+        <title>Ubold - Responsive Admin Dashboard Template</title>
+
+        <!-- X-editable css -->
+        <link type="text/css" href="assets/plugins/x-editable/dist/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet">
+
+        <!-- @component runtime/styles -->
+
+        <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="assets/js/modernizr.min.js"></script>
+        
+    </head>
+
+
+    <body class="fixed-left">
+        
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            <!-- @component layout/topbar {"compactClass":""} -->
+
+
+            <!-- @component layout/sidebar {"nav":{"page-form-xeditable":" active","group-forms":" active"}} --> 
+
+
+
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->                      
+            <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container">
+
+                        <!-- Page-Title -->
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h4 class="page-title">X-Editable</h4>
+                                <ol class="breadcrumb">
+                                    <li><a href="#">Ubold</a></li>
+                                    <li><a href="#">Forms</a></li>
+                                    <li class="active">X-Editable</li>
+                                </ol>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="row">
+							<div class="col-sm-12">
+								<div class="card-box">
+									<div class="row">
+										<div class="col-lg-6">
+											<h4 class="m-b-30 m-t-0 header-title"><b>Inline Editor</b></h4>
+											<form action="#" class="form-horizontal">
+												<div class="form-group">
+													<label class="col-sm-5 control-label">Simple Text Field</label>
+													<div class="col-sm-7">
+														<a href="#" id="inline-username" data-type="text" data-pk="1" data-title="Enter username">superuser</a>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-5 control-label">Empty text field, required</label>
+													<div class="col-sm-7">
+														<a href="#" id="inline-firstname" data-type="text" data-pk="1" data-bs-placement="right" data-placeholder="Required" data-title="Enter your firstname"></a>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-5 control-label">Select, local array, custom display</label>
+													<div class="col-sm-7">
+														<a href="#" id="inline-sex" data-type="select" data-pk="1" data-value="" data-title="Select sex"></a>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-5 control-label">Select, error while loading</label>
+													<div class="col-sm-7">
+														<a href="#" id="inline-status" data-type="select" data-pk="1" data-value="0" data-source="/status" data-title="Select status">Active</a>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-5 control-label">Combodate</label>
+													<div class="col-sm-7">
+														<a href="#" id="inline-dob" data-type="combodate" data-value="2015-09-24" data-format="YYYY-MM-DD" data-viewformat="DD/MM/YYYY" data-template="D / MMM / YYYY" data-pk="1"  data-title="Select Date of birth"></a>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-5 control-label">Textarea, buttons below. Submit by <i>ctrl+enter</i></label>
+													<div class="col-sm-7">
+														<a href="#" id="inline-comments" data-type="textarea" data-pk="1" data-placeholder="Your comments here..." data-title="Enter comments">awesome user!</a>
+													</div>
+												</div>
+												
+											</form>
+										</div>
+										
+										<div class="col-lg-6">
+											<h4 class="m-b-30 m-t-0 header-title"><b>Popover Editor</b></h4>
+											<form action="#" class="form-horizontal editor-horizontal">
+												<div class="form-group">
+													<label class="col-sm-5 control-label">Simple Text Field</label>
+													<div class="col-sm-7">
+														<a href="#" id="username" data-type="text" data-pk="1" data-title="Enter username">superuser</a>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-5 control-label">Empty text field, required</label>
+													<div class="col-sm-7">
+														<a href="#" id="firstname" data-type="text" data-pk="1" data-bs-placement="right" data-placeholder="Required" data-title="Enter your firstname"></a>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-5 control-label">Select, local array, custom display</label>
+													<div class="col-sm-7">
+														<a href="#" id="sex" data-type="select" data-pk="1" data-value="" data-title="Select sex"></a>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-5 control-label">Select, error while loading</label>
+													<div class="col-sm-7">
+														<a href="#" id="status" data-type="select" data-pk="1" data-value="0" data-source="/status" data-title="Select status">Active</a>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-5 control-label">Combodate</label>
+													<div class="col-sm-7">
+														<a href="#" id="dob" data-type="combodate" data-value="1984-05-15" data-format="YYYY-MM-DD" data-viewformat="DD/MM/YYYY" data-template="D / MMM / YYYY" data-pk="1"  data-title="Select Date of birth"></a>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-5 control-label">Textarea, buttons below. Submit by <i>ctrl+enter</i></label>
+													<div class="col-sm-7">
+														<a href="#" id="comments" data-type="textarea" data-pk="1" data-placeholder="Your comments here..." data-title="Enter comments">awesome user!</a>
+													</div>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+                        <!-- end row -->
+
+                    </div> <!-- container -->
+                               
+                </div> <!-- content -->
+
+                <!-- @component layout/footer {"alignment":""} -->
+
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Right content here -->
+            <!-- ============================================================== -->
+
+
+            <!-- @component layout/rightbar -->
+
+
+        </div>
+        <!-- END wrapper -->
+    
+        <script>
+            var resizefunc = [];
+        </script>
+
+        <!-- jQuery  -->
+        <!-- @component runtime/scripts -->
+
+
+        <!-- @component runtime/theme-scripts -->
+
+        <!-- XEditable Plugin -->
+        <script src="assets/plugins/moment/moment.js"></script>
+        <script type="text/javascript" src="assets/plugins/x-editable/dist/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+        <script type="text/javascript" src="assets/pages/jquery.xeditable.js"></script>
+	
+	</body>
+</html>

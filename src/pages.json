@@ -1,0 +1,531 @@
+{
+  "pages": [
+    {
+      "source": "pages/applications/calendar/apps-calendar.html",
+      "output": "apps-calendar.html",
+      "module": "applications/calendar"
+    },
+    {
+      "source": "pages/applications/contacts/apps-contact.html",
+      "output": "apps-contact.html",
+      "module": "applications/contacts"
+    },
+    {
+      "source": "pages/applications/mail/apps-email-compose.html",
+      "output": "apps-email-compose.html",
+      "module": "applications/mail"
+    },
+    {
+      "source": "pages/applications/mail/apps-email-read.html",
+      "output": "apps-email-read.html",
+      "module": "applications/mail"
+    },
+    {
+      "source": "pages/applications/mail/apps-inbox.html",
+      "output": "apps-inbox.html",
+      "module": "applications/mail"
+    },
+    {
+      "source": "pages/charts/chart-c3.html",
+      "output": "chart-c3.html",
+      "module": "charts"
+    },
+    {
+      "source": "pages/charts/chart-chartist.html",
+      "output": "chart-chartist.html",
+      "module": "charts"
+    },
+    {
+      "source": "pages/charts/chart-chartjs.html",
+      "output": "chart-chartjs.html",
+      "module": "charts"
+    },
+    {
+      "source": "pages/charts/chart-flot.html",
+      "output": "chart-flot.html",
+      "module": "charts"
+    },
+    {
+      "source": "pages/charts/chart-morris.html",
+      "output": "chart-morris.html",
+      "module": "charts"
+    },
+    {
+      "source": "pages/charts/chart-nvd3.html",
+      "output": "chart-nvd3.html",
+      "module": "charts"
+    },
+    {
+      "source": "pages/charts/chart-other.html",
+      "output": "chart-other.html",
+      "module": "charts"
+    },
+    {
+      "source": "pages/charts/chart-peity.html",
+      "output": "chart-peity.html",
+      "module": "charts"
+    },
+    {
+      "source": "pages/charts/chart-radial.html",
+      "output": "chart-radial.html",
+      "module": "charts"
+    },
+    {
+      "source": "pages/charts/chart-sparkline.html",
+      "output": "chart-sparkline.html",
+      "module": "charts"
+    },
+    {
+      "source": "pages/examples/components-animation.html",
+      "output": "components-animation.html",
+      "module": "examples"
+    },
+    {
+      "source": "pages/examples/components-grid.html",
+      "output": "components-grid.html",
+      "module": "examples"
+    },
+    {
+      "source": "pages/examples/components-nestable-list.html",
+      "output": "components-nestable-list.html",
+      "module": "examples"
+    },
+    {
+      "source": "pages/examples/components-range-sliders.html",
+      "output": "components-range-sliders.html",
+      "module": "examples"
+    },
+    {
+      "source": "pages/examples/components-sweet-alert.html",
+      "output": "components-sweet-alert.html",
+      "module": "examples"
+    },
+    {
+      "source": "pages/examples/components-widgets.html",
+      "output": "components-widgets.html",
+      "module": "examples"
+    },
+    {
+      "source": "pages/crm/crm-contact.html",
+      "output": "crm-contact.html",
+      "module": "crm"
+    },
+    {
+      "source": "pages/crm/crm-customers.html",
+      "output": "crm-customers.html",
+      "module": "crm"
+    },
+    {
+      "source": "pages/crm/crm-dashboard.html",
+      "output": "crm-dashboard.html",
+      "module": "crm"
+    },
+    {
+      "source": "pages/crm/crm-leads.html",
+      "output": "crm-leads.html",
+      "module": "crm"
+    },
+    {
+      "source": "pages/crm/crm-opportunities.html",
+      "output": "crm-opportunities.html",
+      "module": "crm"
+    },
+    {
+      "source": "pages/dashboard/dashboard_2.html",
+      "output": "dashboard_2.html",
+      "module": "dashboard"
+    },
+    {
+      "source": "pages/dashboard/dashboard_3.html",
+      "output": "dashboard_3.html",
+      "module": "dashboard"
+    },
+    {
+      "source": "pages/ecommerce/ecommerce-dashboard.html",
+      "output": "ecommerce-dashboard.html",
+      "module": "ecommerce"
+    },
+    {
+      "source": "pages/ecommerce/ecommerce-orders.html",
+      "output": "ecommerce-orders.html",
+      "module": "ecommerce"
+    },
+    {
+      "source": "pages/ecommerce/ecommerce-product-detail.html",
+      "output": "ecommerce-product-detail.html",
+      "module": "ecommerce"
+    },
+    {
+      "source": "pages/ecommerce/ecommerce-products.html",
+      "output": "ecommerce-products.html",
+      "module": "ecommerce"
+    },
+    {
+      "source": "pages/ecommerce/ecommerce-sellers.html",
+      "output": "ecommerce-sellers.html",
+      "module": "ecommerce"
+    },
+    {
+      "source": "pages/extras/extra-coming-soon.html",
+      "output": "extra-coming-soon.html",
+      "module": "extras"
+    },
+    {
+      "source": "pages/extras/extra-email-template.html",
+      "output": "extra-email-template.html",
+      "module": "extras"
+    },
+    {
+      "source": "pages/extras/extra-faq.html",
+      "output": "extra-faq.html",
+      "module": "extras"
+    },
+    {
+      "source": "pages/extras/extra-gallery.html",
+      "output": "extra-gallery.html",
+      "module": "extras"
+    },
+    {
+      "source": "pages/extras/extra-invoice.html",
+      "output": "extra-invoice.html",
+      "module": "extras"
+    },
+    {
+      "source": "pages/extras/extra-maintenance.html",
+      "output": "extra-maintenance.html",
+      "module": "extras"
+    },
+    {
+      "source": "pages/extras/extra-pricing.html",
+      "output": "extra-pricing.html",
+      "module": "extras"
+    },
+    {
+      "source": "pages/extras/extra-profile.html",
+      "output": "extra-profile.html",
+      "module": "extras"
+    },
+    {
+      "source": "pages/extras/extra-search-result.html",
+      "output": "extra-search-result.html",
+      "module": "extras"
+    },
+    {
+      "source": "pages/extras/extra-sitemap.html",
+      "output": "extra-sitemap.html",
+      "module": "extras"
+    },
+    {
+      "source": "pages/extras/extra-timeline.html",
+      "output": "extra-timeline.html",
+      "module": "extras"
+    },
+    {
+      "source": "pages/forms/form-advanced.html",
+      "output": "form-advanced.html",
+      "module": "forms"
+    },
+    {
+      "source": "pages/forms/form-elements.html",
+      "output": "form-elements.html",
+      "module": "forms"
+    },
+    {
+      "source": "pages/forms/form-image-crop.html",
+      "output": "form-image-crop.html",
+      "module": "forms"
+    },
+    {
+      "source": "pages/forms/form-mask.html",
+      "output": "form-mask.html",
+      "module": "forms"
+    },
+    {
+      "source": "pages/forms/form-pickers.html",
+      "output": "form-pickers.html",
+      "module": "forms"
+    },
+    {
+      "source": "pages/forms/form-summernote.html",
+      "output": "form-summernote.html",
+      "module": "forms"
+    },
+    {
+      "source": "pages/forms/form-uploads.html",
+      "output": "form-uploads.html",
+      "module": "forms"
+    },
+    {
+      "source": "pages/forms/form-validation.html",
+      "output": "form-validation.html",
+      "module": "forms"
+    },
+    {
+      "source": "pages/forms/form-wizard.html",
+      "output": "form-wizard.html",
+      "module": "forms"
+    },
+    {
+      "source": "pages/forms/form-wysiwig.html",
+      "output": "form-wysiwig.html",
+      "module": "forms"
+    },
+    {
+      "source": "pages/forms/form-xeditable.html",
+      "output": "form-xeditable.html",
+      "module": "forms"
+    },
+    {
+      "source": "pages/icons/icons-fontawesome.html",
+      "output": "icons-fontawesome.html",
+      "module": "icons"
+    },
+    {
+      "source": "pages/icons/icons-glyphicons.html",
+      "output": "icons-glyphicons.html",
+      "module": "icons"
+    },
+    {
+      "source": "pages/icons/icons-ionicons.html",
+      "output": "icons-ionicons.html",
+      "module": "icons"
+    },
+    {
+      "source": "pages/icons/icons-materialdesign.html",
+      "output": "icons-materialdesign.html",
+      "module": "icons"
+    },
+    {
+      "source": "pages/icons/icons-simple-line.html",
+      "output": "icons-simple-line.html",
+      "module": "icons"
+    },
+    {
+      "source": "pages/icons/icons-themifyicon.html",
+      "output": "icons-themifyicon.html",
+      "module": "icons"
+    },
+    {
+      "source": "pages/icons/icons-weather.html",
+      "output": "icons-weather.html",
+      "module": "icons"
+    },
+    {
+      "source": "pages/dashboard/index.html",
+      "output": "index.html",
+      "module": "dashboard"
+    },
+    {
+      "source": "pages/layouts/layout-header_2.html",
+      "output": "layout-header_2.html",
+      "module": "layouts"
+    },
+    {
+      "source": "pages/layouts/layout-leftbar_2.html",
+      "output": "layout-leftbar_2.html",
+      "module": "layouts"
+    },
+    {
+      "source": "pages/layouts/layout-menu-collapsed.html",
+      "output": "layout-menu-collapsed.html",
+      "module": "layouts"
+    },
+    {
+      "source": "pages/layouts/layout-menu-small.html",
+      "output": "layout-menu-small.html",
+      "module": "layouts"
+    },
+    {
+      "source": "pages/maps/map-google.html",
+      "output": "map-google.html",
+      "module": "maps"
+    },
+    {
+      "source": "pages/maps/map-vector.html",
+      "output": "map-vector.html",
+      "module": "maps"
+    },
+    {
+      "source": "pages/errors/page-400.html",
+      "output": "page-400.html",
+      "module": "errors"
+    },
+    {
+      "source": "pages/errors/page-403.html",
+      "output": "page-403.html",
+      "module": "errors"
+    },
+    {
+      "source": "pages/errors/page-404.html",
+      "output": "page-404.html",
+      "module": "errors"
+    },
+    {
+      "source": "pages/errors/page-404_alt.html",
+      "output": "page-404_alt.html",
+      "module": "errors"
+    },
+    {
+      "source": "pages/errors/page-500.html",
+      "output": "page-500.html",
+      "module": "errors"
+    },
+    {
+      "source": "pages/errors/page-503.html",
+      "output": "page-503.html",
+      "module": "errors"
+    },
+    {
+      "source": "pages/authentication/page-lock-screen.html",
+      "output": "page-lock-screen.html",
+      "module": "authentication"
+    },
+    {
+      "source": "pages/authentication/page-login-v2.html",
+      "output": "page-login-v2.html",
+      "module": "authentication"
+    },
+    {
+      "source": "pages/authentication/page-login.html",
+      "output": "page-login.html",
+      "module": "authentication"
+    },
+    {
+      "source": "pages/authentication/page-recoverpw.html",
+      "output": "page-recoverpw.html",
+      "module": "authentication"
+    },
+    {
+      "source": "pages/authentication/page-register-v2.html",
+      "output": "page-register-v2.html",
+      "module": "authentication"
+    },
+    {
+      "source": "pages/authentication/page-register.html",
+      "output": "page-register.html",
+      "module": "authentication"
+    },
+    {
+      "source": "pages/authentication/page-signup-signin.html",
+      "output": "page-signup-signin.html",
+      "module": "authentication"
+    },
+    {
+      "source": "pages/layouts/page-starter.html",
+      "output": "page-starter.html",
+      "module": "layouts"
+    },
+    {
+      "source": "pages/tables/tables-basic.html",
+      "output": "tables-basic.html",
+      "module": "tables"
+    },
+    {
+      "source": "pages/tables/tables-bootstrap.html",
+      "output": "tables-bootstrap.html",
+      "module": "tables"
+    },
+    {
+      "source": "pages/tables/tables-datatable.html",
+      "output": "tables-datatable.html",
+      "module": "tables"
+    },
+    {
+      "source": "pages/tables/tables-editable.html",
+      "output": "tables-editable.html",
+      "module": "tables"
+    },
+    {
+      "source": "pages/tables/tables-foo-tables.html",
+      "output": "tables-foo-tables.html",
+      "module": "tables"
+    },
+    {
+      "source": "pages/tables/tables-responsive.html",
+      "output": "tables-responsive.html",
+      "module": "tables"
+    },
+    {
+      "source": "pages/ui/ui-bootstrap.html",
+      "output": "ui-bootstrap.html",
+      "module": "ui"
+    },
+    {
+      "source": "pages/ui/ui-buttons.html",
+      "output": "ui-buttons.html",
+      "module": "ui"
+    },
+    {
+      "source": "pages/ui/ui-carousel.html",
+      "output": "ui-carousel.html",
+      "module": "ui"
+    },
+    {
+      "source": "pages/ui/ui-checkbox-radio.html",
+      "output": "ui-checkbox-radio.html",
+      "module": "ui"
+    },
+    {
+      "source": "pages/ui/ui-images.html",
+      "output": "ui-images.html",
+      "module": "ui"
+    },
+    {
+      "source": "pages/ui/ui-modals.html",
+      "output": "ui-modals.html",
+      "module": "ui"
+    },
+    {
+      "source": "pages/ui/ui-notification.html",
+      "output": "ui-notification.html",
+      "module": "ui"
+    },
+    {
+      "source": "pages/ui/ui-panels.html",
+      "output": "ui-panels.html",
+      "module": "ui"
+    },
+    {
+      "source": "pages/ui/ui-portlets.html",
+      "output": "ui-portlets.html",
+      "module": "ui"
+    },
+    {
+      "source": "pages/ui/ui-progressbars.html",
+      "output": "ui-progressbars.html",
+      "module": "ui"
+    },
+    {
+      "source": "pages/ui/ui-tabs.html",
+      "output": "ui-tabs.html",
+      "module": "ui"
+    },
+    {
+      "source": "pages/ui/ui-typography.html",
+      "output": "ui-typography.html",
+      "module": "ui"
+    }
+  ],
+  "assets": [
+    {
+      "source": "components/layout/shell.js",
+      "output": "HTML/assets/js/jquery.app.js"
+    },
+    {
+      "source": "components/ui/plugins.js",
+      "output": "HTML/assets/js/jquery.core.js"
+    },
+    {
+      "source": "components/runtime/legacy-compat.js",
+      "output": "HTML/assets/js/legacy-compat.js"
+    },
+    {
+      "source": "features/charts/chartjs.js",
+      "output": "HTML/assets/pages/chartjs.init.js"
+    },
+    {
+      "source": "features/calendar/calendar.js",
+      "output": "HTML/assets/pages/jquery.fullcalendar.js"
+    }
+  ]
+}

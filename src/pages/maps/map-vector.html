@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
+        <meta name="author" content="Coderthemes">
+
+        <link rel="shortcut icon" href="assets/images/favicon_1.ico">
+
+        <title>Ubold - Responsive Admin Dashboard Template</title>
+
+         <!-- jvectormap -->
+        <link href="assets/plugins/jvectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
+
+        <!-- @component runtime/styles -->
+
+        <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="assets/js/modernizr.min.js"></script>
+        
+    </head>
+
+
+    <body class="fixed-left">
+        
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            <!-- @component layout/topbar {"compactClass":""} -->
+
+
+            <!-- @component layout/sidebar {"nav":{"page-map-vector":" active","group-maps":" active"}} --> 
+
+
+
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->                      
+            <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container">
+
+                        <!-- Page-Title -->
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h4 class="page-title">Vector Map</h4>
+                                <ol class="breadcrumb">
+                                    <li><a href="#">Ubold</a></li>
+                                    <li><a href="#">Maps</a></li>
+                                    <li class="active">Vector Map</li>
+                                </ol>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        <div class="row">
+							<div class="col-lg-12">
+								<div class="card-box">
+									<h4 class="m-t-0 m-b-20 header-title"><b>World Map</b></h4>
+									
+									<div id="world-map-markers" style="height: 500px"></div>
+								</div>
+							</div>
+						</div>
+						
+						
+						
+						<div class="row">
+							<div class="col-lg-6">
+								<div class="card-box">
+									<h4 class="m-t-0 m-b-20 header-title"><b>USA Map</b></h4>
+									
+									<div id="usa" style="height: 400px"></div>
+								</div>
+							</div>
+							
+							<div class="col-lg-6">
+								<div class="card-box">
+									<h4 class="m-t-0 m-b-20 header-title"><b>India Map</b></h4>
+									
+									<div id="india" style="height: 400px"></div>
+								</div>
+							</div>
+						</div>
+						
+						
+						<div class="row">
+							<div class="col-lg-6">
+								<div class="card-box">
+									<h4 class="m-t-0 m-b-20 header-title"><b>UK Map</b></h4>
+									
+									<div id="uk" style="height: 400px"></div>
+								</div>
+							</div>
+							
+							<div class="col-lg-6">
+								<div class="card-box">
+									<h4 class="m-t-0 m-b-20 header-title"><b>Chicago Map</b></h4>
+									
+									<div id="chicago" style="height: 400px"></div>
+								</div>
+							</div>
+						</div>
+						
+						
+						
+						<div class="row">
+							<div class="col-lg-6">
+								<div class="card-box">
+									<h4 class="m-t-0 m-b-20 header-title"><b>Australia Map</b></h4>
+									
+									<div id="australia" style="height: 400px"></div>
+								</div>
+							</div>
+							
+							<div class="col-lg-6">
+								<div class="card-box">
+									<h4 class="m-t-0 m-b-20 header-title"><b>Canada Map</b></h4>
+									
+									<div id="canada" style="height: 400px"></div>
+								</div>
+							</div>
+						</div>
+						
+						
+						
+						<div class="row">
+							<div class="col-lg-6">
+								<div class="card-box">
+									<h4 class="m-t-0 m-b-20 header-title"><b>Germany Map</b></h4>
+									
+									<div id="germany" style="height: 400px"></div>
+								</div>
+							</div>
+							
+							<div class="col-lg-6">
+								<div class="card-box">
+									<h4 class="m-t-0 m-b-20 header-title"><b>Asia Map</b></h4>
+									
+									<div id="asia" style="height: 400px"></div>
+								</div>
+							</div>
+						</div>
+						
+						
+
+                        
+
+                    </div> <!-- container -->
+                               
+                </div> <!-- content -->
+
+                <!-- @component layout/footer {"alignment":""} -->
+
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Right content here -->
+            <!-- ============================================================== -->
+
+
+            <!-- @component layout/rightbar -->
+
+
+        </div>
+        <!-- END wrapper -->
+
+        <script>
+            var resizefunc = [];
+        </script>
+
+        <!-- jQuery  -->
+        <!-- @component runtime/scripts -->
+
+
+        <!-- @component runtime/theme-scripts -->
+
+        <script src="assets/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
+        <script src="assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+        <script src="assets/plugins/jvectormap/gdp-data.js"></script>
+        <script src="assets/plugins/jvectormap/jquery-jvectormap-us-aea-en.js"></script>
+        <script src="assets/plugins/jvectormap/jquery-jvectormap-uk-mill-en.js"></script>
+        <script src="assets/plugins/jvectormap/jquery-jvectormap-au-mill.js"></script>
+        <script src="assets/plugins/jvectormap/jquery-jvectormap-us-il-chicago-mill-en.js"></script>
+        <script src="assets/plugins/jvectormap/jquery-jvectormap-ca-lcc.js"></script>
+        <script src="assets/plugins/jvectormap/jquery-jvectormap-de-mill.js"></script>
+        <script src="assets/plugins/jvectormap/jquery-jvectormap-in-mill.js"></script>
+        <script src="assets/plugins/jvectormap/jquery-jvectormap-asia-mill.js"></script>
+        <script src="assets/pages/jvectormap.init.js"></script>
+	
+	
+	</body>
+</html>

@@ -45,8 +45,9 @@ Less 构建保留 Google Fonts 的 CSS 引用，编译过程不需要访问字�
 - 修复 Waypoints 对 window 调用 offset 的问题，以及页面中的旧 load 事件写法。
 - 移动布局直接初始化尺寸状态，不依赖 body resize 事件冒泡。
 
-`scripts/migrate.mjs` 是本分支的一次性迁移工具（重复执行不会插入重复引用），
-从仓库原始提交提取已移除的布局规则。正常构建只需执行 `vendor` 和 `build:css`。
+`scripts/migrate.mjs` 是早期依赖升级的一次性迁移工具，从仓库原始提交提取已移除的布局规则。
+组件化后应编辑 `src/` 中的页面和应用脚本源码，再执行 `npm run build:pages`。
+完整构建可运行 `npm run build`；公共组件和输出路径说明见 [COMPONENTS.md](COMPONENTS.md)。
 
 ## 验证
 
